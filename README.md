@@ -22,3 +22,7 @@
 
 #### Long Term Goal: Progress to option 2
   
+#### Restrictions:
+  * Backend is pure node js
+  * WebServer -> express is recommended 
+  * FrontEnd Use HTML, Css, vanillaJS, anything else is okay as long as everyone in group is down with it.
