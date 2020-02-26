@@ -1,4 +1,4 @@
-# group_project_COMP_1800
+# Plan of Action
 ### Group members:
    * Zenen
    * Tommy 
