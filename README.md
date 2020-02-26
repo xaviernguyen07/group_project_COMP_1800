@@ -18,8 +18,7 @@
 ​
 ## [Github](https://github.com/xaviernguyen07/group_project_COMP_1800)
 
-#### Short Term Goal:
-  *
+#### Short Term Goal: MVP of option1
 
-#### Long Term Goal:
-  *
+#### Long Term Goal: Progress to option 2
+  
