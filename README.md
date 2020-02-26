@@ -18,6 +18,8 @@
 ​
 ## [Github](https://github.com/xaviernguyen07/group_project_COMP_1800)
 
+## [Figma](https://www.figma.com/file/gsjgaP6l3Tf2wqgiyRA361/Wireframing-in-Figma?node-id=0%3A1)
+
 #### Short Term Goal: MVP of option1
 
 #### Long Term Goal: Progress to option 2
