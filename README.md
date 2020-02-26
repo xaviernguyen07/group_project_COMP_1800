@@ -17,3 +17,9 @@
 ## [Trello](https://trello.com/b/Ywau2Axo/1800-team-project)
 ​
 ## [Github](https://github.com/xaviernguyen07/group_project_COMP_1800)
+
+#### Short Term Goal:
+  *
+
+#### Long Term Goal:
+  *
