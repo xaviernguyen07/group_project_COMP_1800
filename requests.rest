@@ -1,0 +1,17 @@
+GET http://localhost:3000/protected
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1ODMyNzkxMTZ9.KEFNA1NZBiBeSsvuaxqPuN5lzOgZPSwgzNLaOxnzmh8
+Content-Type: application/json
+
+
+
+
+###
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+    "username":"zenen"
+}
+
+
+
