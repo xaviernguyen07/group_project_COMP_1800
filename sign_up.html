@@ -4,6 +4,13 @@
 
 
 body{
+  position: relative;
+width: 1500px;
+height: 1000px;
+
+background: #FFFFFF;
+}
+.bg{
 /* background */
 
 
@@ -325,11 +332,11 @@ color: #FFFFFF;
 </style>
 <body>
 
-<h2>Create Account</h2>
 
 <!-- <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Sign Up</button> -->
 
-<!-- <div id="id01" class="modal"> -->
+<div id="id01" class="bg">
+    <h2>Create Account</h2>
   <form class="modal-content" action="/action_page.php">
       <label class="email" for="email"><b>Your email:</b></label>
       <input class="enterEmail" type="text" placeholder="Enter your email address..." name="email" required>
@@ -346,7 +353,7 @@ color: #FFFFFF;
         <button type="signin" class="signupbtn">Sign Up</button>
       </div>
   </form>
-<!-- </div> -->
+</div>
 
 <script>
 </script>
