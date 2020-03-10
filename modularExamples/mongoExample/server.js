@@ -8,7 +8,6 @@ const PORT = env.PORT | 3000
 const bodyParser = require('body-parser')
 const connectString = 'mongodb+srv://root:toor@comp1800-wninv.azure.mongodb.net/test?retryWrites=true&w=majority';
 const MongoClient = require('mongodb').MongoClient;
-const nigshit = require('config.js');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }))
 
