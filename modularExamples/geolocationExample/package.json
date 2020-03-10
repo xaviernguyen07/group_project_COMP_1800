@@ -1,0 +1,15 @@
+{
+  "name": "geolocationexample",
+  "version": "1.0.0",
+  "description": "1. Open index.html in browser",
+  "main": "index.html",
+  "scripts": {
+      "start": "open-cli index.html ",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "open-cli": "^5.0.0"
+  }
+}

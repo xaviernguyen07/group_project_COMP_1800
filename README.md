@@ -1,3 +1,25 @@
+# Using this repo:
+  1. `$ cd _Example`
+  2. `$ npm install`
+  3. `$ npm start`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Plan of Action
 ### Group members:
    * Zenen
