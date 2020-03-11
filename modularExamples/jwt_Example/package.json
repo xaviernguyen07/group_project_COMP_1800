@@ -4,7 +4,7 @@
   "description": "# To start:   1. Open Two terminal windows   1. in first terminal `$ node app.js`   1. in other terminal enter `$ python3 RUN_THIS.py`",
   "main": "app.js",
   "scripts": {
-    "start": "open-cli http://localhost:3000 & node app.js",
+    "start": "node app.js & python3 RUN_THIS.py",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
