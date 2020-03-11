@@ -19,16 +19,17 @@ app.listen(PORT, ()=> console.log(`Listening on port ${PORT}!!`));
 
 
 app.get('/', (request, response) => {
-  response.sendFile("index.html", {root: __dirname});
+  response.sendFile("sign_in.html", {root: __dirname});
 });
 
 
 //Example for accessing client request paramters: from basic get request
-app.post('/dark_sky.php?', async (request, response) => {
+app.post('/action_page.php?', async (request, response) => {
     //pull login info from request body
     const data = request.body;
-    const userName = request.body.username;
-    const passWord = request.body.password;
+    
+    const userName = request.body.email;
+    const passWord = request.body.psw;
 
     let hashedUsername;
     let hashedPassword;
@@ -94,9 +95,12 @@ function authUser(connectString, userName, passWord){
                    // console.log(err, result)
                     if(result === true){
                         console.log("Authenticated!")
+                        return true
                     }
                     else{
+                        
                         console.log("Username in DB but incorrect password")
+                        return
                     }
                 })
 
