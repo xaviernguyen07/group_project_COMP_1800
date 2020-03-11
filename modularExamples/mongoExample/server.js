@@ -1,12 +1,12 @@
  //Minamal server
 
  //A few dependancy
-const env = require('dotenv')
+require('dotenv').config()
 const express = require('express');
 const app = new express();
-const PORT = env.PORT | 3000
+const PORT = process.env.PORT | 3000
 const bodyParser = require('body-parser')
-const connectString = 'mongodb+srv://root:toor@comp1800-wninv.azure.mongodb.net/test?retryWrites=true&w=majority';
+const MONGOURI = process.env.MONGOURI;
 const MongoClient = require('mongodb').MongoClient;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -48,11 +48,12 @@ app.post('/dark_sky.php?', (request, response) => {
 
 function testDB(connectString){
     //Attempt to connect to database and print contents
+    console.log("Connecting to mongo db...");
  
-    const uri = "mongodb+srv://root:toor@comp1800-wninv.azure.mongodb.net/test?retryWrites=true&w=majority";
-    const client = new MongoClient(uri, { useNewUrlParser: true });
+    const client = new MongoClient(connectString, { useNewUrlParser: true });
     client.connect(err => {
             //Traverse into collection
+          console.log("connected!");
           const collection = client.db("reminder_app").collection("reminders");
           //Query db for items and log each item from array
           console.log(collection.find().toArray((err, results) =>{
@@ -64,8 +65,7 @@ function testDB(connectString){
         
         //
  })
-    console.log("connected!");
 
 }
 
-testDB();
+testDB(MONGOURI);
