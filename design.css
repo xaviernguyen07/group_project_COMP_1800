@@ -15,9 +15,11 @@ a.selected {
     display: none;
     margin-top: 15px;
     position: absolute;
-    ;
+    left: 169px;
+    top: 88px;
     text-align: left;
-    width: 394px;
+    width: 1162px;
+    height: 859px;
     z-index: 50;
     padding: 25px 25px 20px;
 }
@@ -37,8 +39,63 @@ a.selected {
 .messagepop p,
 .messagepop.div {
     border-bottom: 1px solid #EFEFEF;
-    margin: 8px 0;
-    padding-bottom: 8px;
+    margin: 4px 0;
+    padding-bottom: 4px;
+}
+
+.messagepop h2 {
+    font-family: Righteous;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 79px;
+    letter-spacing: -0.015em;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.messagepop h4 {
+    font-family: Righteous;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 60px;
+    /* identical to box height */
+    letter-spacing: -0.015em;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+#add-more-subtasks {
+    font-family: Righteous;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 30px;
+    /* identical to box height */
+    letter-spacing: -0.015em;
+    text-decoration-line: underline;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.pop input[type=text] {
+    width: 600px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 4px;
+    font-family: Righteous;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 28px;
+    line-height: 20px;
+    /* identical to box height */
+    letter-spacing: -0.015em;
+    color: #CCCCCC;
+}
+
+.pop #time,
+#date[type=text] {
+    width: 270px;
 }
 
 
