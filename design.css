@@ -1160,3 +1160,8 @@ width: 50%;
         border: 1px solid #ccc;
     }
 }
+
+.btn_bar {
+    position: absolute;
+    top: -0px;
+}
