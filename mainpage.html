@@ -15,18 +15,14 @@
     <!--create new reminder popup window-->
     <div class="messagepop pop">
         <h2>New Reminder</h2>
-
         <h4>Title:</h4>
         <input placeholder="Enter reminder title.." type="text" name="title" id="title">
-        </br>
 
         <h4>Date:</h4>
         <input placeholder="Pick date.." type="text" name="date" id="date">
-        </br>
 
         <h4>Time:</h4>
         <input placeholder="Pick time.." type="text" name="time" id="time">
-        </br>
 
         <h4>Subtask:</h4>
         <div id='subtasks-div'>
@@ -43,7 +39,7 @@
     ​ ​
     <div class="topnav">
         <div class="search-container">
-            <form action="/action_page.php">
+            <form>
                 <input type="text" placeholder="Search reminder..." name="search">
                 <button type="submit"><i class="fa fa-search"></i></button>
             </form>
@@ -119,13 +115,7 @@
 
     <script src="https://common.olemiss.edu/_js/pickadate.js"></script>
     <script src='script.js'></script>
-    <script>
-        $(document).ready(function() {
-            $("#btn").click(function() {
-                $(".color").slideToggle("slow");
-            });
-        });
-    </script>
+
 </body>
 ​
 
