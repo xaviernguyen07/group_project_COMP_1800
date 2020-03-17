@@ -1,6 +1,6 @@
 $(document).ready(function() {
     $("#btn").click(function() {
-        $(".color").slideToggle("slow");
+        $(".color").slideToggle("fast");
     });
 });
 
