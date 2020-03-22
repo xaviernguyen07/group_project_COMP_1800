@@ -278,7 +278,7 @@ li {
    left: 11px;
 } */
 
-img.btn {
+img#btn {
     width: 5%;
     position: absolute;
     right: 40px;
@@ -286,7 +286,7 @@ img.btn {
     padding: 8px;
 }
 
-img.btn:hover {
+img#btn:hover {
     opacity: 50%;
 }
 
@@ -582,7 +582,7 @@ button.fa {
 
 /* choose tag section --------------------------------------------------*/
 
-#button_part {
+.button_part {
     /* Rectangle 23 */
     position: absolute;
     width: 400px;
@@ -595,12 +595,23 @@ button.fa {
     padding-left: 30px;
 }
 
+.close {
+    background: rgba(124, 232, 225, 1);
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
 .color {
+    visibility: hidden;
     padding: 10px;
-    display: none;
     position: relative;
     right: 0px;
     top: 0px;
+}
+
+.active {
+    visibility: visible;
 }
 
 .color h2 {

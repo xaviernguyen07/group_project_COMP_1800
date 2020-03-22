@@ -1,9 +1,11 @@
 $(document).ready(function() {
-    $("#btn").click(function() {
-        $(".color").slideToggle("fast");
+    $(".open").click(function() {
+        $(".color").addClass("active");
+    });
+    $(".close").click(function() {
+        $(".color").removeClass("active");
     });
 });
-
 
 $(document).ready(function() {
     /*
