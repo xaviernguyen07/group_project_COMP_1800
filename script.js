@@ -28,7 +28,7 @@ $(document).ready(function() {
     popup window
     */
     function deselect(e) {
-        $('.pop').slideFadeToggle(function() {
+        $('.pop-create-new').slideFadeToggle(function() {
             e.removeClass('selected');
         });
     }
@@ -39,7 +39,7 @@ $(document).ready(function() {
                 deselect($(this));
             } else {
                 $(this).addClass('selected');
-                $('.pop').slideFadeToggle();
+                $('.pop-create-new').slideFadeToggle();
             }
             return false;
         });
@@ -110,5 +110,9 @@ $(document).ready(function() {
             }
         });
         console.log(subtaskArray);
+    });
+
+    $('close').click(function() {
+        $('#create-new-reminder').removeClass()
     });
 });
