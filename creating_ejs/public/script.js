@@ -1,6 +1,9 @@
 $(document).ready(function() {
-    $("#btn").click(function() {
-        $(".color").slideToggle("slow");
+    $(".open").click(function() {
+        $(".color").addClass("active");
+    });
+    $(".close").click(function() {
+        $(".color").removeClass("active");
     });
 });
 

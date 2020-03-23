@@ -150,10 +150,60 @@ label.lab {
     margin: 3px;
 }
 
-span.dot {
+span.dot1 {
     height: 15px;
     width: 15px;
-    background: #FE6C6C;
+    background: pink;
+    border-radius: 50%;
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 5px;
+}
+
+span.dot2 {
+    height: 15px;
+    width: 15px;
+    background: red;
+    border-radius: 50%;
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 5px;
+}
+
+span.dot3 {
+    height: 15px;
+    width: 15px;
+    background: yellow;
+    border-radius: 50%;
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 5px;
+}
+
+span.dot4 {
+    height: 15px;
+    width: 15px;
+    background: greenyellow;
+    border-radius: 50%;
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 5px;
+}
+
+span.dot5 {
+    height: 15px;
+    width: 15px;
+    background: cyan;
+    border-radius: 50%;
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 5px;
+}
+
+span.dot6 {
+    height: 15px;
+    width: 15px;
+    background: blue;
     border-radius: 50%;
     display: inline-block;
     margin-top: 10px;
@@ -191,6 +241,10 @@ table.reminderTable {
     width: 590px;
 }
 
+tr:hover {
+    background-color: #ddd;
+}
+
 td {
     height: 70px;
     font-family: Righteous;
@@ -224,7 +278,7 @@ li {
    left: 11px;
 } */
 
-img.btn {
+img#btn {
     width: 5%;
     position: absolute;
     right: 40px;
@@ -232,7 +286,7 @@ img.btn {
     padding: 8px;
 }
 
-img.btn:hover {
+img#btn:hover {
     opacity: 50%;
 }
 
@@ -305,6 +359,12 @@ img.btn:hover {
     background: #EFEFEF;
 }
 
+body.submain {
+    width: 850px;
+    height: 880px;
+    background: white;
+}
+
 .main {
     float: left;
     /* Rectangle 8 */
@@ -323,7 +383,7 @@ img.btn:hover {
 .footer {
     padding: 20px;
     text-align: center;
-    background: #ddd;
+    background: white;
 }
 
 #inviteFriends {
@@ -374,8 +434,8 @@ img.btn:hover {
     position: absolute;
     width: 776px;
     height: 110px;
-    left: 668px;
-    top: 757px;
+    left: 0px;
+    top: 670px;
     background: #7CE8E1;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 34px;
@@ -391,12 +451,30 @@ img.btn:hover {
     color: #FFFFFF;
 }
 
+.button.tag {
+    width: 230px;
+    height: 70px;
+    background: #7A4675;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 18px;
+    position: relative;
+    left: 30px;
+    font-family: Righteous;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 45px;
+    /* identical to box height */
+    letter-spacing: -0.015em;
+    color: #FFFFFF;
+}
+
 .button.edit {
     position: absolute;
     width: 230px;
     height: 70px;
-    left: 668px;
-    top: 905px;
+    left: 0px;
+    top: 805px;
     background: #7A4675;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 18px;
@@ -417,8 +495,8 @@ img.btn:hover {
     position: absolute;
     width: 230px;
     height: 70px;
-    left: 941px;
-    top: 905px;
+    left: 300px;
+    top: 805px;
     background: #7A4675;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 18px;
@@ -439,8 +517,8 @@ img.btn:hover {
     position: absolute;
     width: 230px;
     height: 70px;
-    left: 1214px;
-    top: 905px;
+    left: 600px;
+    top: 805px;
     background: #7A4675;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 18px;
@@ -504,118 +582,78 @@ button.fa {
 
 /* choose tag section --------------------------------------------------*/
 
-#button_part {
-    width: 20%;
-    height: 300px;
+.button_part {
+    /* Rectangle 23 */
     position: absolute;
-    right: 80px;
-    top: 150px;
-    /* only for demonstration, should be removed */
+    width: 400px;
+    height: 497px;
+    left: 350px;
+    top: -340px;
+    background: rgba(124, 232, 225, 0.9);
+    opacity: 0.9;
+    border: 1px solid #000000;
+    padding-left: 30px;
+}
+
+.close {
+    background: rgba(124, 232, 225, 1);
+    position: absolute;
+    right: 10px;
+    top: 10px;
 }
 
 .color {
+    /* visibility: hidden; */
     padding: 10px;
-    display: none;
     position: relative;
     right: 0px;
     top: 0px;
 }
 
-
-/* color tag */
-
-#button1 {
-    width: 200px;
-    height: 60px;
-    background-color: #eee;
-    color: red;
-    border-radius: 22px;
-    border: 5px solid red;
-    font-size: 1em;
-    text-align: center;
-    box-shadow: 5px 5px 5px #888;
-    display: inline-block;
+.active {
+    visibility: visible;
 }
 
-#button2 {
-    width: 200px;
-    height: 60px;
-    background-color: #eee;
-    color: #FA6900;
-    border-radius: 22px;
-    border: 5px solid #FA6900;
-    font-size: 1em;
-    text-align: center;
-    box-shadow: 5px 5px 5px #888;
-    display: inline-block;
+.color h2 {
+    /* Add tag to reminder: */
+    width: 340px;
+    height: 45px;
+    font-family: Righteous;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 45px;
+    /* identical to box height */
+    letter-spacing: -0.015em;
+    color: rgba(0, 0, 0, 0.7);
 }
 
-#button3 {
-    width: 200px;
-    height: 60px;
-    background-color: #eee;
-    color: yellow;
-    border-radius: 22px;
-    border: 5px solid yellow;
-    font-size: 1em;
-    text-align: center;
-    box-shadow: 5px 5px 5px #888;
-    display: inline-block;
+.color h4 {
+    /* Existing tags: */
+    width: 151px;
+    height: 30px;
+    font-family: Righteous;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 30px;
+    /* identical to box height */
+    letter-spacing: -0.015em;
+    color: rgba(0, 0, 0, 0.7);
 }
 
-#button4 {
-    width: 200px;
-    height: 60px;
-    border-radius: 22px;
-    background-color: #eee;
-    color: green;
-    text-align: center;
-    font-size: 1em;
-    border: 5px solid green;
-    box-shadow: 5px 5px 5px #888;
-    display: inline-block;
-}
-
-#button5 {
-    width: 200px;
-    height: 60px;
-    background-color: #eee;
-    border-radius: 22px;
-    color: blue;
-    text-align: center;
-    font-size: 1em;
-    border: 5px solid blue;
-    box-shadow: 5px 5px 5px #888;
-    display: inline-block;
-    position: relative;
-}
-
-#button6 {
-    width: 200px;
-    height: 60px;
-    background-color: #eee;
-    border-radius: 22px;
-    color: Indigo;
-    text-align: center;
-    font-size: 1em;
-    border: 5px solid Indigo;
-    box-shadow: 5px 5px 5px #888;
-    display: inline-block;
-    position: relative;
-}
-
-#button7 {
-    width: 200px;
-    height: 60px;
-    background-color: #eee;
-    border-radius: 22px;
-    color: purple;
-    text-align: center;
-    font-size: 1em;
-    border: 5px solid purple;
-    box-shadow: 5px 5px 5px #888;
-    display: inline-block;
-    position: relative;
+.color input {
+    /* Enter tag name.. */
+    width: 280px;
+    height: 30px;
+    font-family: Righteous;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 30px;
+    /* identical to box height */
+    letter-spacing: -0.015em;
+    color: #CCCCCC;
 }
 
 
@@ -1132,11 +1170,6 @@ width: 50%;
     color: #FFFFFF;
 }
 
-.btn_bar {
-    position: absolute;
-    top: -0px;
-}
-
 
 /* Change styles for cancel button and signup button on extra small screens */
 
@@ -1164,4 +1197,9 @@ width: 50%;
     .topnav input[type=text] {
         border: 1px solid #ccc;
     }
+}
+
+.btn_bar {
+    position: absolute;
+    top: -0px;
 }

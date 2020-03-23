@@ -1,0 +1,62 @@
+<body class="submain">
+    ​ ​
+
+
+    <div class="control_space">
+        <h1>
+            <%= reminderItem.title %>
+        </h1>
+
+        <label class="lab"><%= reminderItem.tag %></label>
+
+
+        <h3>Time:
+            <%= reminderItem.time %>
+        </h3>
+        <p id="time">Clender
+            <%= reminderItem.date %>
+        </p>
+        ​
+        <h3>Subtasks: </h3>
+        <ul class="subtask">
+            <li>
+                <%= reminderItem.subtask %>
+            </li>
+        </ul>
+        <img class="open" id="btn" src="cross_button.png">
+
+
+    </div>
+    <div class="color">
+        <div class="button_part">
+            <form action="/reminder/2" method="POST">
+                <button class="close">X</button>
+                <h2>Add tag to reminder</h2>
+                <h4>Existing tags:</h4>
+                <label class="lab">label1</label><label class="lab">label2</label>
+                <br>
+                <h4>Add new tag:</h4>
+                <input placeholder="Enter tag name..." type="text" name="tag" id="tag">
+                <br>
+                <span class="dot1"></span><span class="dot2"></span><span class="dot3"></span><span class="dot4"></span><span class="dot5"></span><span class="dot6"></span>
+                <br>
+                <br>
+                <button class="button tag">Add tag</button>
+            </form>
+        </div>
+    </div>
+    ​ ​ ​
+    <div class="footer">
+        ​<input type="button" class="button reminder" value="BRING AN UMBRELLA?">
+        <table>
+            <th><input type="button" class="button edit" value="Edit"></th>
+            <th><button class="button share">Share<i class="fa fa-share-alt"></i></th>
+                <th><button class="button delete">Delete<i class="btn fa fa-trash"></i></th>
+        </table>
+    </div>
+
+    <script src="https://common.olemiss.edu/_js/pickadate.js"></script>
+    <script src='script.js'></script>
+
+</body>
+​

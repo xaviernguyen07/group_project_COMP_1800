@@ -17,15 +17,34 @@ app.get("/sign_up", function(req, res) {
     res.render('reminder/sign_up')
 })
 
-app.get("/reminder", reminderController.main_page)
+
+// app.get("/reminder/reminder_subpage", function(req, res) {
+//     res.render('reminder/reminder_subpage')
+// }, reminderController.list1)
+
+app.get("/reminder", reminderController.list)
 
 app.get("/reminder/", reminderController.new)
+
+// app.get("/reminder/2", reminderController.list_tag)
+
+// app.get("/reminder/2", reminderController.new_tag)
+
+
+app.get("/reminder/:id", reminderController.edit)
+
+app.get("/reminder/:id", reminderController.listOne)
+
 
 // app.get("/reminder/:id", reminderController.listOne)
 
 // app.get("/reminder/:id/edit", reminderController.edit)
 
 app.post("/reminder/", reminderController.create)
+
+app.post("/reminder/:id", reminderController.update) // suggestion for class: look into put and post
+
+app.post("/reminder/delete/2", reminderController.delete)
 
 
 
