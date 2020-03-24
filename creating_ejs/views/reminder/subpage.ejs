@@ -7,29 +7,34 @@
             <%= reminderItem.title %>
         </h1>
 
-        <label class="lab"><%= reminderItem.tag %></label>
 
 
-        <h3>Time:
-            <%= reminderItem.time %>
-        </h3>
-        <p id="time">Clender
-            <%= reminderItem.date %>
-        </p>
-        ​
-        <h3>Subtasks: </h3>
-        <ul class="subtask">
-            <li>
-                <%= reminderItem.subtask %>
-            </li>
-        </ul>
-        <img class="open" id="btn" src="cross_button.png">
+        <% for (var item in reminderItem.tag){ %>
+            <label class="lab"><%= reminderItem.tag[item] %></label>
+            <% } %>
+
+
+
+                <h3>Time:
+                    <%= reminderItem.time %>
+                </h3>
+                <p id="time">Clender
+                    <%= reminderItem.date %>
+                </p>
+                ​
+                <h3>Subtasks: </h3>
+                <ul class="subtask">
+                    <li>
+                        <%= reminderItem.subtask %>
+                    </li>
+                </ul>
+                <img class="open" id="btn" src="cross_button.png">
 
 
     </div>
     <div class="color">
         <div class="button_part">
-            <form action="/reminder/2" method="POST">
+            <form action=<%="/reminder/" + reminderItem.id %> method="POST">
                 <button class="close">X</button>
                 <h2>Add tag to reminder</h2>
                 <h4>Existing tags:</h4>
@@ -51,7 +56,12 @@
         <table>
             <th><input type="button" class="button edit" value="Edit"></th>
             <th><button class="button share">Share<i class="fa fa-share-alt"></i></th>
-                <th><button class="button delete">Delete<i class="btn fa fa-trash"></i></th>
+                <th>
+                    <form action=<%="/reminder/delete/" + reminderItem.id %> method="POST">
+                    <button class="button delete">Delete<i class="btn fa fa-trash">
+                    </form>
+                </th>
+
         </table>
     </div>
 

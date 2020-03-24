@@ -31,20 +31,22 @@ app.get("/reminder/", reminderController.new)
 // app.get("/reminder/2", reminderController.new_tag)
 
 
-app.get("/reminder/:id", reminderController.edit)
+app.get("/reminder/:id", reminderController.edit_tag)
 
 app.get("/reminder/:id", reminderController.listOne)
+
+app.post("/reminder/:id", reminderController.update_tag)
+
+app.post("/reminder/", reminderController.create)
+
+app.post("/reminder/delete/:id", reminderController.delete)
 
 
 // app.get("/reminder/:id", reminderController.listOne)
 
 // app.get("/reminder/:id/edit", reminderController.edit)
 
-app.post("/reminder/", reminderController.create)
 
-app.post("/reminder/:id", reminderController.update) // suggestion for class: look into put and post
-
-app.post("/reminder/delete/2", reminderController.delete)
 
 
 

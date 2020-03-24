@@ -34,28 +34,28 @@
             <table class="reminderTable">
                 <% reminders.forEach(function (reminderItem) { %>
                     <tr>
-                        <td><input type="checkbox" id="reminder" name="reminder" value="reminder">
-                            <label for="reminder1"><a target="iframe_a" href=<%="/reminder/" + reminderItem.id %>><%= reminderItem.title %></a></label><label class="lab-related"><span
-                                    class="dot"></span><span class="dot"></span>
+                        <td>
+                            <input type="checkbox" id="reminder" name="reminder" value="reminder">
+                            <label for="reminder1">
+                                <a target="iframe_a" href=<%="/reminder/" + reminderItem.id %>><%= reminderItem.title %></a>
+                            </label>
+                            <span class="dot"></span><span class="dot"></span>
                         </td>
                     </tr>
-            <% }) %>
+                    <% }) %>
 
-                    ​ ​
-        </table>
+                        ​ ​
+            </table>
+        </div>
+        <div class="btn_bar">
+            <table>
+                <th><input type="button" class="button create" id='create-new-reminder' value="Create new"></th>
+                <th><button style="font-size: 37px" class="fa fa-share-alt"></button></th>
+                <th><button style="font-size: 37px" class="btn fa fa-trash"></button></th>
+            </table>
+        </div>
     </div>
-    <div class="btn_bar">
-        <table>
-            <th><input type="button" class="button create" id='create-new-reminder' value="Create new"></th>
-            <th><button style="font-size: 37px" class="fa fa-share-alt"></button></th>
-            <th><button style="font-size: 37px" class="btn fa fa-trash"></button></th>
-        </table>
+
+    <iframe src="/reminder/2" class="main" name="iframe_a"></iframe> ​ ​
     </div>
-</div>           
-
-    <iframe src="http://localhost:4000/reminder/2" class="main" name="iframe_a"></iframe>
-
-
-    ​ ​
-</div>
-​
+    ​

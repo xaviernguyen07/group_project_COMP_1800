@@ -9,9 +9,9 @@ let remindersController = {
         res.render('reminder/main_page')
     },
 
-    list_tag: (req, res) => {
-        res.render('reminder/subpage', { reminders: Database.cindy.reminders })
-    },
+    // list_tag: (req, res) => {
+    //     res.render('reminder/subpage', { reminders: Database.cindy.reminders })
+    // },
 
     new_tag: (req, res) => {
         res.render('reminder/subpage')
@@ -39,11 +39,11 @@ let remindersController = {
             title: req.body.title,
             date: req.body.date, // figure out how to get title and descrption
             time: req.body.time,
-            subtask: req.body.subtask
+            subtask: req.body.subtask,
+            tag: []
         }
         Database.cindy.reminders.push(reminder);
         res.redirect('/reminder');
-
     },
 
     // create_tag: (req, res) => {
@@ -56,7 +56,7 @@ let remindersController = {
     // },
 
 
-    edit: (req, res) => {
+    edit_tag: (req, res) => {
         let reminderToFind = req.params.id;
         let searchResult = Database.cindy.reminders.find(function(reminder) {
             return reminder.id == reminderToFind; // Why do you think I chose NOT to use === here?
@@ -65,18 +65,12 @@ let remindersController = {
 
     },
 
-    update: (req, res) => {
+    update_tag: (req, res) => {
         let reminderToFind = req.params.id;
         let searchResult = Database.cindy.reminders.find(function(reminder) {
             if (reminder.id == reminderToFind) {
-                reminder.title = req.body.title,
-                    reminder.date = req.body.date,
-                    reminder.time = req.body.time,
-                    reminder.subtask = reminder.subtask,
-                    //     reminder.description = req.body.description,
-                    //     // Why do you think I had to do req.body.completed == "true" below?
-                    //     reminder.completed = req.body.completed == "true"
-                    reminder.tag = req.body.tag
+                let new_tag = req.body.tag
+                reminder.tag.push(new_tag)
             }
         });
         res.redirect('/reminder/' + reminderToFind)
