@@ -19,6 +19,10 @@ mg.connect(MONGOURI,  { useNewUrlParser: true, useUnifiedTopology: true }, (err,
 })
 let db = mg.connection; 
 
+//bcrypt stuff
+const saltRounds = 10;
+const bcrypt = require('bcryptjs');
+
 app.use(express.static(__dirname + "/public"));
 app.use(ejslayouts);
 app.set("view engine", "ejs");
@@ -34,7 +38,23 @@ app.get("/sign_up", function(req, res) {
 })
 
 app.post('/sign_up', (req, res)=>{
-    req.body.Password = psw = req.body.Password[0]
+
+    // hash password then set it to Password in req.body
+    let passWord = req.body.Password[0]
+    
+    bcrypt.hash(passWord, saltRounds, function(err, hashed){
+        if(err) () => console.log(err);
+        else{
+            hashedPassword = hashed;
+            console.log(hashed)
+        };
+    });
+
+    const hashedPassWord = bcrypt.hash(passWord);
+    req.body.Password = hashedPassWord
+    console.log(hashedPassWord)
+
+    // insert user to database
     db.collection('reminders').insertOne(req.body, (err, result) => {
         if (err) return console.log(err);
 
