@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://common.olemiss.edu/_js/pickadate.js-3.5.3/lib/themes/classic.css" id="theme_base">
+    <link rel="stylesheet" href="https://common.olemiss.edu/_js/pickadate.js-3.5.3/lib/themes/classic.date.css" id="theme_date">
+    <link rel="stylesheet" href="https://common.olemiss.edu/_js/pickadate.js-3.5.3/lib/themes/classic.time.css" id="theme_time">
+    <link rel="stylesheet" type="text/css" href="design.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    ​ ​
+    <!--create new reminder popup window-->
+    <div class="messagepop pop-create-new">
+        <h2>New Reminder</h2>
+        <h4>Title:</h4>
+        <input placeholder="Enter reminder title.." type="text" name="title" id="title">
+
+        <h4>Date:</h4>
+        <input placeholder="Pick date.." type="text" name="date" id="date">
+
+        <h4>Time:</h4>
+        <input placeholder="Pick time.." type="text" name="time" id="time">
+
+        <h4>Subtask:</h4>
+        <div id='subtasks-div'>
+            <input type="text" placeholder="Enter subtask.." name="subtask" class="subtask-input">
+        </div>
+        </br>
+        <a href='#' id='add-more-subtasks'>add more</a>
+        </br>
+        </br>
+        <button id='create'>Create</button>
+        <button class='close'>Red X button</button>
+    </div>
+    <!--end create new reminder popup window-->
+    <div class="topnav">
+        <div class="search-container">
+            <form>
+                <input type="text" placeholder="Search reminder..." name="search">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+        <div class="btn-friend-logout">
+            <a href="#logout" class="btn_text">Logout</a>
+            <a href="#invite" class="btn_text">Invite Friends</a>
+        </div>
+    </div>
+    ​
+    <div class="row">
+        <div class="side" style='overflow:scroll;'>
+            <table class="reminderTable">
+
+                <tr>
+                    <td><input type="checkbox" id="reminder1" name="reminder1" value="reminder1">
+                        <label for="reminder1"><a href="reminder_subpage.html" target="iframe_a">the first example of reminder</a></label><span class="dot"></span><span class="dot"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" id="reminder1" name="reminder1" value="reminder1">
+                        <label for="reminder1"><a href="reminder_subpage1.html" target="iframe_a">the first example of reminder</a></label><span class="dot"></span><span class="dot"></span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="btn_bar">
+            <table>
+                <th><input type="button" class="button create" id='create-new-reminder' value="Create new"></th>
+                <th><button style="font-size: 37px" class="fa fa-share-alt"></button></th>
+                <th><button style="font-size: 37px" class="btn fa fa-trash"></button></th>
+            </table>
+        </div>
+
+    </div>
+
+    <iframe src="reminder_subpage.html" class="main" name="iframe_a"></iframe>
+
+
+    <script src="https://common.olemiss.edu/_js/pickadate.js"></script>
+    <script src='script.js'></script>
+
+</body>
+​
+
+</html>
