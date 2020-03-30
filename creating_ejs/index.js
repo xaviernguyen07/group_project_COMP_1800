@@ -3,6 +3,21 @@ const app = express();
 const ejslayouts = require("express-ejs-layouts")
 const reminderController = require("./controllers/reminder_controller");
 
+//mongo path
+require('dotenv').config()
+const MONGOURI = process.env.MONGOURI;
+
+//body-parser setup
+const bp = require("body-parser");
+app.use(bp.json());
+app.use(bp.urlencoded({extended: true}));
+
+//mongoose setup
+const mg = require("mongoose");
+mg.connect(MONGOURI,  { useNewUrlParser: true, useUnifiedTopology: true }, (err, client) => {
+   if (err) return console.log(err)
+})
+let db = mg.connection; 
 
 app.use(express.static(__dirname + "/public"));
 app.use(ejslayouts);
@@ -13,10 +28,20 @@ app.use(express.urlencoded({ extended: false }))
 app.get("/", function(req, res) {
     res.render('reminder/login')
 })
+
 app.get("/sign_up", function(req, res) {
     res.render('reminder/sign_up')
 })
 
+app.post('/sign_up', (req, res)=>{
+    req.body.Password = psw = req.body.Password[0]
+    db.collection('reminders').insertOne(req.body, (err, result) => {
+        if (err) return console.log(err);
+
+        console.log('saved to database');
+        res.redirect('/reminder')
+    })
+})
 
 // app.get("/reminder/reminder_subpage", function(req, res) {
 //     res.render('reminder/reminder_subpage')

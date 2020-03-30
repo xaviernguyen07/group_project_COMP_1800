@@ -892,7 +892,7 @@ width: 50%;
 .enterPsw[type=password] {
     /* Enter your password.. */
     position: absolute;
-    width: 241px;
+    width: 284px;
     height: 30px;
     left: 745px;
     top: 535px;
@@ -918,10 +918,10 @@ width: 50%;
     box-sizing: border-box;
 }
 
-.reEnterPsw[type=repassword] {
+.reEnterPsw[type=password] {
     /* Re-enter password.. */
     position: absolute;
-    width: 224px;
+    width: 284px;
     height: 30px;
     left: 745px;
     top: 601px;
@@ -1068,7 +1068,7 @@ width: 50%;
 
 .signin_enterPsw[type=password] {
     position: absolute;
-    width: 241px;
+    width: 284px;
     height: 30px;
     left: 467px;
     top: 568px;

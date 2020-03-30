@@ -12,15 +12,15 @@
 
     <div id="id01" class="bg">
         <h2 class="title">Create Account</h2>
-        <form class="modal-content" action="/action_page.php">
+        <form class="modal-content" method='POST'>
             <label class="email" for="email"><b>Your email:</b></label>
-            <input class="enterEmail" type="text" placeholder="Enter your email address..." name="email" required>
+            <input class="enterEmail" type="text" placeholder="Enter your email address..." name="Username" required>
 
             <label class="psw" for="psw"><b>Your Password: </b></label>
-            <input class="enterPsw" type="password" placeholder="Enter Password..." name="psw" required>
+            <input class="enterPsw" type="password" placeholder="Enter Password..." name="Password" required>
 
             <label class="repsw" for="repsw"><b>Re-enter Password: </b></label>
-            <input class="reEnterPsw" type="repassword" placeholder="Re-nnter Password..." name="psw" required>
+            <input class="reEnterPsw" type="password" placeholder="Re-nnter Password..." name="Password" required>
 
             <!-- <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p> -->
 
@@ -29,8 +29,20 @@
             </div>
         </form>
     </div>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>
+        $('.signupbtn').click((e)=>{
+            let psw = $('.enterPsw').val();
+            let rpsw = $('.reEnterPsw').val();
+
+            if (psw !== rpsw){
+                e.preventDefault;
+                $('.enterPsw').val('');
+                $('.reEnterPsw').val('');
+                $('.enterPsw').attr('placeholder', 'Two passwords must be the same. Please re-enter.');
+                $('.reEnterPsw').attr('placeholder', 'Two passwords must be the same. Please re-enter.');
+            }
+        })
     </script>
 
 </body>
