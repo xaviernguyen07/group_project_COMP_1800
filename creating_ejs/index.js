@@ -2,6 +2,8 @@ const express = require("express")
 const app = express();
 const ejslayouts = require("express-ejs-layouts")
 const reminderController = require("./controllers/reminder_controller");
+const geolocation = require('geolocation')
+
 
 //mongo path
 require('dotenv').config()
@@ -61,6 +63,11 @@ app.post('/sign_up', (req, res) => {
     req.body.Tags = [{ color: 'FE6C6C', name: 'Important' }, { color: '#926CFE', name: 'Family Tasks' }];
     req.body.Subtasks = ['Subtask1', 'Subtask2'];
     req.body.Date = new Date();
+    // navigator.geolocation.getCurrentPosition(function(location) {
+    //     req.body.latt = location.coords.latitude;
+    //     req.body.long = location.coords.longitude;
+    // });
+
 
     // insert user to database
     db.collection('reminders').insertOne(req.body, (err, result) => {
@@ -102,8 +109,7 @@ app.post("/reminder/delete/:id", reminderController.delete)
 
 
 
-
-
-
 // listen localhost7000
-app.listen(7000)
+app.listen(7000, () => {
+    console.log("Server running. Visit: localhost:7000/reminder in your browser 🚀");
+})
