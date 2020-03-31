@@ -5,6 +5,16 @@ const reminderController = require("./controllers/reminder_controller");
 const geolocation = require('geolocation')
 
 
+
+var latt;
+var long;
+navigator.geolocation.getCurrentPosition(function(location) {
+    latt = location.coords.latitude;
+    long = location.coords.longitude;
+    return latt, long
+});
+
+
 //mongo path
 require('dotenv').config()
 const MONGOURI = process.env.MONGOURI;
@@ -63,10 +73,8 @@ app.post('/sign_up', (req, res) => {
     req.body.Tags = [{ color: 'FE6C6C', name: 'Important' }, { color: '#926CFE', name: 'Family Tasks' }];
     req.body.Subtasks = ['Subtask1', 'Subtask2'];
     req.body.Date = new Date();
-    // navigator.geolocation.getCurrentPosition(function(location) {
-    //     req.body.latt = location.coords.latitude;
-    //     req.body.long = location.coords.longitude;
-    // });
+    req.body.latt = latt;
+    req.body.long = long;
 
 
     // insert user to database
@@ -77,6 +85,8 @@ app.post('/sign_up', (req, res) => {
         res.redirect('/reminder')
     })
 })
+
+
 
 // app.get("/reminder/reminder_subpage", function(req, res) {
 //     res.render('reminder/reminder_subpage')
