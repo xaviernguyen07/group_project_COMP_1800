@@ -16,7 +16,7 @@ app.use(bp.urlencoded({extended: true}));
 
 //mongoose setup
 const mg = require("mongoose");
-mg.connect("mongodb://localhost:27017/",  { useNewUrlParser: true, useUnifiedTopology: true }, (err, client) => {
+mg.connect("mongodb://localhost:27017/test",  { useNewUrlParser: true, useUnifiedTopology: true }, (err, client) => {
    if (err) return console.log(err)
    app.listen(3000, () => {
      console.log('listening on 3000')
@@ -35,12 +35,17 @@ let db = mg.connection;
 // let SomeModel = mongoose.model('SomeModel',SomeModelSchema);
 
 app.get("/", (req, res) => {
+   // use find({ name: {name} }......  to query specific entry containing specific name
+   // or leave empty as  find() to query all
    db.collection('quotes').find().toArray((err, result) => {
       if (err) return console.log(err)
       // renders index.ejs
+      console.log(result)
+      console.log()
       res.render('index.ejs', {quotes: result})
     })
 });
+
 
 app.post('/quotes', (req, res) => {
    //insert
@@ -54,7 +59,10 @@ app.post('/quotes', (req, res) => {
    }
 
    //retreive
-   db.collection('quotes').find().toArray(function(err, results) {
-      console.log(results);
-   })
+   // db.collection('quotes').find().toArray(function(err, results) {
+   //    console.log(results);
+   // })
+
+
+
 });
