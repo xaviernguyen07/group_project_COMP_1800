@@ -51,8 +51,12 @@ app.post('/sign_up', (req, res)=>{
     });
 
     const hashedPassWord = bcrypt.hash(passWord);
-    req.body.Password = hashedPassWord
-    console.log(hashedPassWord)
+    req.body.Password = hashedPassWord;
+    req.body.Title = 'Sample reminder';
+    req.body.Description = 'Sample reminder description';
+    req.body.Tags = [{color:'FE6C6C', name:'Important'}, {color:'#926CFE', name:'Family Tasks'}];
+    req.body.Subtasks = ['Subtask1', 'Subtask2'];
+    req.body.Date = new Date();
 
     // insert user to database
     db.collection('reminders').insertOne(req.body, (err, result) => {
