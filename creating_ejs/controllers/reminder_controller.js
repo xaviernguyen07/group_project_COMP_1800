@@ -2,7 +2,7 @@ let Database = require("../database");
 
 let remindersController = {
     list: (req, res) => {
-        res.render('reminder/main_page', { reminders: Database.cindy.reminders })
+        res.render('reminder/main_page', { reminders: Database.cindy.reminders, })
     },
 
     new: (req, res) => {
@@ -17,6 +17,11 @@ let remindersController = {
         res.render('reminder/subpage')
     },
 
+    // link: (req, res) => {
+
+    //     res.render('reminder/main_page', { reminders: Database.cindy.reminders, id = Database.cindy.reminders  })
+    // },    
+
     // list1: (req, res) => {
     //     res.render('/reminder/reminder_subpage', { reminderItem: Database.cindy.reminders })
     // },
@@ -29,7 +34,7 @@ let remindersController = {
         if (searchResult != undefined) {
             res.render('reminder/subpage', { reminderItem: searchResult })
         } else {
-            res.render('reminder/main_page', { reminders: Database.cindy.reminders })
+            res.render('reminder/empty_page', { reminders: Database.cindy.reminders })
         }
     },
 
@@ -61,8 +66,11 @@ let remindersController = {
         let searchResult = Database.cindy.reminders.find(function(reminder) {
             return reminder.id == reminderToFind; // Why do you think I chose NOT to use === here?
         })
-        res.render('reminder/subpage', { reminderItem: searchResult })
-
+        if (searchResult != undefined) {
+            res.render('reminder/subpage', { reminderItem: searchResult })
+        } else {
+            res.render('reminder/empty_page', { reminders: Database.cindy.reminders })
+        }
     },
 
     update_tag: (req, res) => {
@@ -82,7 +90,7 @@ let remindersController = {
             return reminder.id == reminderToFind;
         })
         Database.cindy.reminders.splice(reminderIndex, 1);
-        res.redirect('/reminder');
+        res.redirect('/empty_page');
     }
 }
 

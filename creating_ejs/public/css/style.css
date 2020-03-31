@@ -595,11 +595,19 @@ button.fa {
     padding-left: 30px;
 }
 
+
+/* input.close {
+    width: 10px;
+    height: 10px;
+} */
+
 .close {
     background: rgba(124, 232, 225, 1);
     position: absolute;
     right: 10px;
     top: 10px;
+    width: 10px;
+    height: 10px;
 }
 
 .color {

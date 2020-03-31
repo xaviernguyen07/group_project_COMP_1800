@@ -10,14 +10,14 @@ const MONGOURI = process.env.MONGOURI;
 //body-parser setup
 const bp = require("body-parser");
 app.use(bp.json());
-app.use(bp.urlencoded({extended: true}));
+app.use(bp.urlencoded({ extended: true }));
 
 //mongoose setup
 const mg = require("mongoose");
-mg.connect(MONGOURI,  { useNewUrlParser: true, useUnifiedTopology: true }, (err, client) => {
-   if (err) return console.log(err)
+mg.connect(MONGOURI, { useNewUrlParser: true, useUnifiedTopology: true }, (err, client) => {
+    if (err) return console.log(err)
 })
-let db = mg.connection; 
+let db = mg.connection;
 
 //bcrypt stuff
 const saltRounds = 10;
@@ -37,14 +37,18 @@ app.get("/sign_up", function(req, res) {
     res.render('reminder/sign_up')
 })
 
-app.post('/sign_up', (req, res)=>{
+app.get('/empty_page', (req, res) => {
+    res.render('reminder/empty_page')
+})
+
+app.post('/sign_up', (req, res) => {
 
     // hash password then set it to Password in req.body
     let passWord = req.body.Password[0]
-    
-    bcrypt.hash(passWord, saltRounds, function(err, hashed){
-        if(err) () => console.log(err);
-        else{
+
+    bcrypt.hash(passWord, saltRounds, function(err, hashed) {
+        if (err)() => console.log(err);
+        else {
             hashedPassword = hashed;
             console.log(hashed)
         };
@@ -54,7 +58,7 @@ app.post('/sign_up', (req, res)=>{
     req.body.Password = hashedPassWord;
     req.body.Title = 'Sample reminder';
     req.body.Description = 'Sample reminder description';
-    req.body.Tags = [{color:'FE6C6C', name:'Important'}, {color:'#926CFE', name:'Family Tasks'}];
+    req.body.Tags = [{ color: 'FE6C6C', name: 'Important' }, { color: '#926CFE', name: 'Family Tasks' }];
     req.body.Subtasks = ['Subtask1', 'Subtask2'];
     req.body.Date = new Date();
 
@@ -70,6 +74,7 @@ app.post('/sign_up', (req, res)=>{
 // app.get("/reminder/reminder_subpage", function(req, res) {
 //     res.render('reminder/reminder_subpage')
 // }, reminderController.list1)
+
 
 app.get("/reminder", reminderController.list)
 
@@ -100,5 +105,5 @@ app.post("/reminder/delete/:id", reminderController.delete)
 
 
 
-// listen localhost4000
-app.listen(4000)
+// listen localhost7000
+app.listen(7000)
