@@ -109,52 +109,50 @@ end create new reminder pop up
 .form-popup {
     display: none;
     position: absolute;
-    width: 1162px;
-    height: 859px;
-    left: 165px;
-    top: 91px;
+    width: 462px;
+    height: 659px;
+    left: 125px;
+    top: 0px;
     background: rgba(124, 232, 225, 0.9);
     border: 1px solid #000000;
     box-sizing: border-box;
     z-index: 3;
+    padding-left: 40px;
 }
 
 #popupHeader {
-    position: absolute;
+    /* position: absolute; */
     width: 399px;
-    height: 79px;
-    left: 546px;
-    top: 158px;
+    height: 20px;
+    /* left: 546px;
+    top: 158px; */
     font-family: Righteous;
     font-style: normal;
     font-weight: normal;
-    font-size: 64px;
+    font-size: 40px;
     line-height: 79px;
     letter-spacing: -0.015em;
     color: rgba(0, 0, 0, 0.7);
 }
 
 #popupTitle {
-    position: absolute;
+    /* position: absolute; */
     width: 107px;
-    height: 60px;
-    left: 293px;
-    top: 260px;
+    height: 10px;
+    /* left: 293px;
+    top: 260px; */
     font-family: Righteous;
     font-style: normal;
     font-weight: normal;
-    font-size: 48px;
+    font-size: 28px;
     line-height: 60px;
     letter-spacing: -0.015em;
     color: rgba(0, 0, 0, 0.7);
 }
 
 #dateInput {
-    position: absolute;
-    width: 400px;
-    height: 72px;
-    left: 293px;
-    top: 560px;
+    width: 160px;
+    height: 30px;
     background: rgba(255, 255, 255, 0.95);
     border: 1px solid #000000;
     box-sizing: border-box;
@@ -162,23 +160,16 @@ end create new reminder pop up
 }
 
 #timeInput {
-    position: absolute;
     width: 340px;
-    height: 72px;
-    left: 728px;
-    top: 560px;
+    height: 40px;
     background: rgba(255, 255, 255, 0.95);
-    border: 1px solid #000000;
     box-sizing: border-box;
     border-radius: 4px;
 }
 
 #planInput {
-    position: absolute;
-    width: 777px;
-    height: 72px;
-    left: 293px;
-    top: 400px;
+    width: 300px;
+    height: 40px;
     background: rgba(255, 255, 255, 0.95);
     border: 1px solid #000000;
     box-sizing: border-box;
@@ -186,11 +177,8 @@ end create new reminder pop up
 }
 
 #planInput::-webkit-input-placeholder {
-    position: absolute;
     width: 258px;
-    height: 35px;
-    left: 311px;
-    top: 345px;
+    height: 10px;
     font-family: Righteous;
     font-style: normal;
     font-weight: normal;
@@ -202,31 +190,29 @@ end create new reminder pop up
 }
 
 #planInput::-ms-input-placeholder {
-    position: absolute;
     width: 258px;
-    height: 35px;
-    left: 311px;
-    top: 345px;
+    height: 30px;
     font-family: Righteous;
     font-style: normal;
     font-weight: normal;
-    font-size: 28px;
+    font-size: 24px;
     line-height: 35px;
     /* identical to box height */
     letter-spacing: -0.015em;
     color: #CCCCCC;
 }
 
+#planInput[type=text] {
+    font-size: 24px;
+}
+
 #planInPut::placeholder {
-    position: absolute;
     width: 258px;
-    height: 35px;
-    left: 311px;
-    top: 345px;
+    height: 30px;
     font-family: Righteous;
     font-style: normal;
     font-weight: normal;
-    font-size: 28px;
+    font-size: 44px;
     line-height: 35px;
     /* identical to box height */
     letter-spacing: -0.015em;
@@ -234,15 +220,12 @@ end create new reminder pop up
 }
 
 #popupDate {
-    position: absolute;
-    width: 118px;
-    height: 60px;
-    left: 293px;
-    top: 420px;
+    width: 60px;
+    height: 30px;
     font-family: Righteous;
     font-style: normal;
     font-weight: normal;
-    font-size: 48px;
+    font-size: 24px;
     line-height: 60px;
     /* identical to box height */
     letter-spacing: -0.015em;
@@ -250,15 +233,15 @@ end create new reminder pop up
 }
 
 #popupTime {
-    position: absolute;
-    width: 112px;
-    height: 60px;
-    left: 758px;
-    top: 420px;
+    /* position: absolute; */
+    width: 40px;
+    height: 30px;
+    /* left: 758px;
+    top: 420px; */
     font-family: Righteous;
     font-style: normal;
     font-weight: normal;
-    font-size: 48px;
+    font-size: 24px;
     line-height: 60px;
     /* identical to box height */
     letter-spacing: -0.015em;
@@ -266,27 +249,31 @@ end create new reminder pop up
 }
 
 #popupSubtask {
-    position: absolute;
+    /* position: absolute; */
     width: 195px;
-    height: 60px;
-    left: 293px;
-    top: 576px;
+    height: 10px;
+    /* left: 293px;
+    top: 576px; */
     font-family: Righteous;
     font-style: normal;
     font-weight: normal;
-    font-size: 48px;
-    line-height: 60px;
+    font-size: 24px;
+    /* line-height: 60px; */
     /* identical to box height */
     letter-spacing: -0.015em;
     color: rgba(0, 0, 0, 0.7);
 }
 
+#subtask[type=text] {
+    font-size: 24px;
+}
+
 #subtask {
-    position: absolute;
-    width: 777px;
-    height: 72px;
-    left: 293px;
-    top: 700px;
+    /* position: absolute; */
+    width: 240px;
+    height: 40px;
+    /* left: 293px;
+    top: 700px; */
     background: rgba(255, 255, 255, 0.95);
     border: 1px solid #000000;
     box-sizing: border-box;
@@ -294,15 +281,15 @@ end create new reminder pop up
 }
 
 #subtask::-webkit-input-placeholder {
-    position: absolute;
-    width: 437px;
-    height: 45px;
-    left: 312px;
-    top: 659px;
+    /* position: absolute; */
+    width: 300px;
+    height: 25px;
+    /* left: 312px;
+    top: 659px; */
     font-family: Righteous;
     font-style: normal;
     font-weight: normal;
-    font-size: 36px;
+    font-size: 24px;
     line-height: 45px;
     /* identical to box height */
     letter-spacing: -0.015em;
@@ -310,11 +297,11 @@ end create new reminder pop up
 }
 
 #subtask::-ms-input-placeholder {
-    position: absolute;
-    width: 437px;
+    /* position: absolute; */
+    width: 100px;
     height: 45px;
-    left: 312px;
-    top: 659px;
+    /* left: 312px;
+    top: 659px; */
     font-family: Righteous;
     font-style: normal;
     font-weight: normal;
@@ -326,15 +313,15 @@ end create new reminder pop up
 }
 
 #subtask::placeholder {
-    position: absolute;
+    /* position: absolute; */
     width: 437px;
     height: 45px;
-    left: 312px;
-    top: 659px;
+    /* left: 312px;
+    top: 659px; */
     font-family: Righteous;
     font-style: normal;
     font-weight: normal;
-    font-size: 36px;
+    font-size: 24px;
     line-height: 45px;
     /* identical to box height */
     letter-spacing: -0.015em;
@@ -342,14 +329,14 @@ end create new reminder pop up
 }
 
 #confirmButton {
-    position: absolute;
-    width: 275px;
+    /* position: absolute; */
+    width: 175px;
     height: 50px;
-    left: 540px;
-    top: 793px;
+    /* left: 540px;
+    top: 793px; */
     color: #FFFFFF;
     font-family: Righteous;
-    font-size: 36px;
+    font-size: 24px;
     line-height: 45px;
     background: #7A4675;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -357,11 +344,11 @@ end create new reminder pop up
 }
 
 #closeButton {
-    position: absolute;
+    position: relative;
     width: 50px;
     height: 50px;
-    left: 1075px;
-    top: 78px;
+    left: 150px;
+    top: -500px;
 }
 
 
@@ -1467,3 +1454,10 @@ width: 50%;
     position: absolute;
     top: -0px;
 }
+
+
+/* .edit-popup {
+    position: absolute;
+    right: 0vh;
+    top: 10vh;
+} */
