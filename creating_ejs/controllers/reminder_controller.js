@@ -91,6 +91,7 @@ let remindersController = {
         })
         Database.cindy.reminders.splice(reminderIndex, 1);
         res.redirect('/empty_page');
+        res.redirect('/reminder');
     }
 }
 
