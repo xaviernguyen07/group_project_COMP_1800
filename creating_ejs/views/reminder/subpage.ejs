@@ -8,6 +8,14 @@
             $(".close").click(function() {
                 $(".color").removeClass("active");
             });
+            $('#date').pickadate({
+                formatSubmit: 'mm/dd/yyyy',
+                hiddenName: false
+            });
+            $('#time').pickatime({
+                formatSubmit: 'HH:i',
+                hiddenName: false
+            });
         });
     </script>
     ​ ​
@@ -50,15 +58,17 @@
             <form action=<%="/reminder/" + reminderItem.id %> method="POST">
                 <h2>Add tag to reminder</h2>
                 <h4>Existing tags:</h4>
-                <label class="lab">label1</label><label class="lab">label2</label>
-                <br>
-                <h4>Add new tag:</h4>
-                <input placeholder="Enter tag name..." type="text" name="tag" id="tag">
-                <br>
-                <span class="dot1"></span><span class="dot2"></span><span class="dot3"></span><span class="dot4"></span><span class="dot5"></span><span class="dot6"></span>
-                <br>
-                <br>
-                <button class="button tag">Add tag</button>
+                <% for (var item in reminderItem.tag){ %>
+                    <label class="lab"><%= reminderItem.tag[item] %></label>
+                    <% } %>
+                        <br>
+                        <h4>Add new tag:</h4>
+                        <input placeholder="Enter tag name..." type="text" name="tag" id="tag">
+                        <br>
+                        <span class="dot1"></span><span class="dot2"></span><span class="dot3"></span><span class="dot4"></span><span class="dot5"></span><span class="dot6"></span>
+                        <br>
+                        <br>
+                        <button class="button tag">Add tag</button>
             </form>
         </div>
     </div>
@@ -66,19 +76,19 @@
     <!--create edit popup window-->
     <div class="edit-popup">
         <div class="form-popup_edit" id="popupForm">
-            <form action="post" class="form-container_edit">
+            <form action="<%= " /reminder/update/ " + reminderItem.id %>" class="form-container_edit" method="POST">
                 <h2 id="popupHeader_edit">Edit Reminder</h2>
                 <h4 id="popupTitle_edit">Title</h4>
-                <input type="text" id="planInput_edit" value=<%="" + reminderItem.title %>>
+                <input name="title" type="text" id="planInput_edit" value=<%="" + reminderItem.title %> >
                 <h4 id="popupDate_edit">Date:</h4>
-                <input type="date" id="dateInput_edit" value=<%="" + reminderItem.date %>>
+                <input name="date" type="text" id="date" class="dateInput_edit" value=<%="" + reminderItem.date.toString() %>>
                 <h4 id="popupTime_edit">Time:</h4>
-                <input type="time" id="timeInput_edit" value=<%="" + reminderItem.time %>>
+                <input name="time" type="time" id="time" class="timeInput_edit" value=<%="" + reminderItem.time %>>
                 <h4 id="popupSubtask_edit">Subtask</h4>
-                <input type="text" id="subtask_edit" value=<%="" + reminderItem.subtask %>>
+                <input name="subtask" type="text" id="subtask_edit" value=<%="" + reminderItem.subtask %>>
                 <br><button type="submit" id="confirmButton_edit">Confirm</button>
             </form>
-            <input type="image" src="closeIcon.png" id="closeButton_edit" alt="Click to close" onclick="closeEditPopup()">
+            <input type="button" value="X" id="closeButton_edit" alt="Click to close" onclick="closeEditPopup()">
         </div>
     </div>
 

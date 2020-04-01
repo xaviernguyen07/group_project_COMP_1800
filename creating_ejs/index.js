@@ -62,15 +62,6 @@ app.post('/sign_up', (req, res) => {
     req.body.Tags = [{ color: 'FE6C6C', name: 'Important' }, { color: '#926CFE', name: 'Family Tasks' }];
     req.body.Subtasks = ['Subtask1', 'Subtask2'];
     req.body.Date = new Date();
-    // req.body.Title = 'Sample reminder';
-    // req.body.Description = 'Sample reminder description';
-    // req.body.Tags = [{ color: 'FE6C6C', name: 'Important' }, { color: '#926CFE', name: 'Family Tasks' }];
-    // req.body.Subtasks = ['Subtask1', 'Subtask2'];
-    // req.body.Date = new Date();
-    // navigator.geolocation.getCurrentPosition(function(location) {
-    //     req.body.latt = location.coords.latitude;
-    //     req.body.long = location.coords.longitude;
-    // });
 
 
     // insert user to database
@@ -83,20 +74,9 @@ app.post('/sign_up', (req, res) => {
 })
 
 
-
-// app.get("/reminder/reminder_subpage", function(req, res) {
-//     res.render('reminder/reminder_subpage')
-// }, reminderController.list1)
-
-
 app.get("/reminder", reminderController.list)
 
 app.get("/reminder/", reminderController.new)
-
-// app.get("/reminder/2", reminderController.list_tag)
-
-// app.get("/reminder/2", reminderController.new_tag)
-
 
 app.get("/reminder/:id", reminderController.edit_tag)
 
@@ -108,10 +88,11 @@ app.post("/reminder/", reminderController.create)
 
 app.post("/reminder/delete/:id", reminderController.delete)
 
-
-// app.get("/reminder/:id", reminderController.listOne)
-
 app.get("/reminder/:id", reminderController.edit)
+
+app.post("/reminder/update/:id", reminderController.update) // suggestion for class: look into put and post
+
+
 
 
 
