@@ -62,6 +62,15 @@ app.post('/sign_up', (req, res) => {
     req.body.Tags = [{ color: 'FE6C6C', name: 'Important' }, { color: '#926CFE', name: 'Family Tasks' }];
     req.body.Subtasks = ['Subtask1', 'Subtask2'];
     req.body.Date = new Date();
+    // req.body.Title = 'Sample reminder';
+    // req.body.Description = 'Sample reminder description';
+    // req.body.Tags = [{ color: 'FE6C6C', name: 'Important' }, { color: '#926CFE', name: 'Family Tasks' }];
+    // req.body.Subtasks = ['Subtask1', 'Subtask2'];
+    // req.body.Date = new Date();
+    // navigator.geolocation.getCurrentPosition(function(location) {
+    //     req.body.latt = location.coords.latitude;
+    //     req.body.long = location.coords.longitude;
+    // });
 
 
     // insert user to database
