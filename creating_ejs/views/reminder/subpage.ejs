@@ -1,4 +1,15 @@
 <body class="submain">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(".open").click(function() {
+                $(".color").addClass("active");
+            });
+            $(".close").click(function() {
+                $(".color").removeClass("active");
+            });
+        });
+    </script>
     ​ ​
 
 
@@ -28,14 +39,15 @@
                         <%= reminderItem.subtask %>
                     </li>
                 </ul>
-                <img class="open" id="btn" src="cross_button.png">
+                <p class="open" id="btn">+</p>
 
 
     </div>
+
     <div class="color">
         <div class="button_part">
+            <button class="close">X</button>
             <form action=<%="/reminder/" + reminderItem.id %> method="POST">
-                <!-- <input type="button" class="close" value="x"></input> -->
                 <h2>Add tag to reminder</h2>
                 <h4>Existing tags:</h4>
                 <label class="lab">label1</label><label class="lab">label2</label>
@@ -50,6 +62,7 @@
             </form>
         </div>
     </div>
+
     ​ ​ ​
     <div class="footer">
         ​<input type="button" class="button reminder" value="BRING AN UMBRELLA?">
@@ -64,9 +77,18 @@
 
         </table>
     </div>
-
-    <script src="https://common.olemiss.edu/_js/pickadate.js"></script>
-    <script src='script.js'></script>
+    <script>
+        let label = document.getElementsByTagName("label");
+        let number = 0;
+        label[0].style.backgroundColor = "rgb(" + 130 + "," + 150 + "," + 150 + ")"
+        label[1].style.backgroundColor = "rgb(" + 200 + "," + 100 + "," + 150 + ")"
+        label[2].style.backgroundColor = "rgb(" + 250 + "," + 100 + "," + 200 + ")";
+        label[3].style.backgroundColor = "rgb(" + 20 + "," + 250 + "," + 100 + ")"
+        label[4].style.backgroundColor = "rgb(" + 200 + "," + 150 + "," + 100 + ")"
+        label[5].style.backgroundColor = "rgb(" + 100 + "," + 100 + "," + 205 + ")"
+        label[6].style.backgroundColor = "rgb(" + 230 + "," + 100 + "," + 120 + ")"
+        label[7].style.backgroundColor = "rgb(" + 100 + "," + 130 + "," + 120 + ")"
+    </script>
 
 </body>
 ​

@@ -1,14 +1,4 @@
 $(document).ready(function() {
-    $(".open").click(function() {
-        $(".color").addClass("active");
-    });
-    $(".close").click(function() {
-        $(".color").removeClass("active");
-    });
-});
-
-
-$(document).ready(function() {
     /*
     date/time picker
     */

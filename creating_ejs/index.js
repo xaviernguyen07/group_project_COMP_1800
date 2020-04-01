@@ -2,17 +2,6 @@ const express = require("express")
 const app = express();
 const ejslayouts = require("express-ejs-layouts")
 const reminderController = require("./controllers/reminder_controller");
-const geolocation = require('geolocation')
-
-
-
-var latt;
-var long;
-navigator.geolocation.getCurrentPosition(function(location) {
-    latt = location.coords.latitude;
-    long = location.coords.longitude;
-    return latt, long
-});
 
 
 //mongo path
@@ -73,8 +62,6 @@ app.post('/sign_up', (req, res) => {
     req.body.Tags = [{ color: 'FE6C6C', name: 'Important' }, { color: '#926CFE', name: 'Family Tasks' }];
     req.body.Subtasks = ['Subtask1', 'Subtask2'];
     req.body.Date = new Date();
-    req.body.latt = latt;
-    req.body.long = long;
 
 
     // insert user to database

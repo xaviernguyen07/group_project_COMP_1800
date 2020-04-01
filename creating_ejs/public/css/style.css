@@ -103,6 +103,270 @@ a.selected {
 end create new reminder pop up
 */
 
+
+/* create edit popup */
+
+.form-popup {
+    display: none;
+    position: absolute;
+    width: 1162px;
+    height: 859px;
+    left: 165px;
+    top: 91px;
+    background: rgba(124, 232, 225, 0.9);
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    z-index: 3;
+}
+
+#popupHeader {
+    position: absolute;
+    width: 399px;
+    height: 79px;
+    left: 546px;
+    top: 158px;
+    font-family: Righteous;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 64px;
+    line-height: 79px;
+    letter-spacing: -0.015em;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+#popupTitle {
+    position: absolute;
+    width: 107px;
+    height: 60px;
+    left: 293px;
+    top: 260px;
+    font-family: Righteous;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 60px;
+    letter-spacing: -0.015em;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+#dateInput {
+    position: absolute;
+    width: 400px;
+    height: 72px;
+    left: 293px;
+    top: 560px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+#timeInput {
+    position: absolute;
+    width: 340px;
+    height: 72px;
+    left: 728px;
+    top: 560px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+#planInput {
+    position: absolute;
+    width: 777px;
+    height: 72px;
+    left: 293px;
+    top: 400px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+#planInput::-webkit-input-placeholder {
+    position: absolute;
+    width: 258px;
+    height: 35px;
+    left: 311px;
+    top: 345px;
+    font-family: Righteous;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 28px;
+    line-height: 35px;
+    /* identical to box height */
+    letter-spacing: -0.015em;
+    color: #CCCCCC;
+}
+
+#planInput::-ms-input-placeholder {
+    position: absolute;
+    width: 258px;
+    height: 35px;
+    left: 311px;
+    top: 345px;
+    font-family: Righteous;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 28px;
+    line-height: 35px;
+    /* identical to box height */
+    letter-spacing: -0.015em;
+    color: #CCCCCC;
+}
+
+#planInPut::placeholder {
+    position: absolute;
+    width: 258px;
+    height: 35px;
+    left: 311px;
+    top: 345px;
+    font-family: Righteous;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 28px;
+    line-height: 35px;
+    /* identical to box height */
+    letter-spacing: -0.015em;
+    color: #CCCCCC;
+}
+
+#popupDate {
+    position: absolute;
+    width: 118px;
+    height: 60px;
+    left: 293px;
+    top: 420px;
+    font-family: Righteous;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 60px;
+    /* identical to box height */
+    letter-spacing: -0.015em;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+#popupTime {
+    position: absolute;
+    width: 112px;
+    height: 60px;
+    left: 758px;
+    top: 420px;
+    font-family: Righteous;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 60px;
+    /* identical to box height */
+    letter-spacing: -0.015em;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+#popupSubtask {
+    position: absolute;
+    width: 195px;
+    height: 60px;
+    left: 293px;
+    top: 576px;
+    font-family: Righteous;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 60px;
+    /* identical to box height */
+    letter-spacing: -0.015em;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+#subtask {
+    position: absolute;
+    width: 777px;
+    height: 72px;
+    left: 293px;
+    top: 700px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+#subtask::-webkit-input-placeholder {
+    position: absolute;
+    width: 437px;
+    height: 45px;
+    left: 312px;
+    top: 659px;
+    font-family: Righteous;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 45px;
+    /* identical to box height */
+    letter-spacing: -0.015em;
+    color: #CCCCCC;
+}
+
+#subtask::-ms-input-placeholder {
+    position: absolute;
+    width: 437px;
+    height: 45px;
+    left: 312px;
+    top: 659px;
+    font-family: Righteous;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 45px;
+    /* identical to box height */
+    letter-spacing: -0.015em;
+    color: #CCCCCC;
+}
+
+#subtask::placeholder {
+    position: absolute;
+    width: 437px;
+    height: 45px;
+    left: 312px;
+    top: 659px;
+    font-family: Righteous;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 45px;
+    /* identical to box height */
+    letter-spacing: -0.015em;
+    color: #CCCCCC;
+}
+
+#confirmButton {
+    position: absolute;
+    width: 275px;
+    height: 50px;
+    left: 540px;
+    top: 793px;
+    color: #FFFFFF;
+    font-family: Righteous;
+    font-size: 36px;
+    line-height: 45px;
+    background: #7A4675;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 24px;
+}
+
+#closeButton {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    left: 1075px;
+    top: 78px;
+}
+
+
+/* end edit popup */
+
 body {
     position: relative;
     width: 1500px;
@@ -278,15 +542,18 @@ li {
    left: 11px;
 } */
 
-img#btn {
+#btn {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bolder;
+    font-size: xx-large;
     width: 5%;
     position: absolute;
     right: 40px;
-    top: 118px;
+    top: 95px;
     padding: 8px;
 }
 
-img#btn:hover {
+#btn:hover {
     opacity: 50%;
 }
 
@@ -361,7 +628,7 @@ img#btn:hover {
 
 body.submain {
     width: 850px;
-    height: 880px;
+    height: 900px;
     background: white;
 }
 
@@ -474,7 +741,7 @@ body.submain {
     width: 230px;
     height: 70px;
     left: 0px;
-    top: 805px;
+    top: 825px;
     background: #7A4675;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 18px;
@@ -496,7 +763,7 @@ body.submain {
     width: 230px;
     height: 70px;
     left: 300px;
-    top: 805px;
+    top: 825px;
     background: #7A4675;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 18px;
@@ -518,7 +785,7 @@ body.submain {
     width: 230px;
     height: 70px;
     left: 600px;
-    top: 805px;
+    top: 825px;
     background: #7A4675;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 18px;
@@ -595,23 +862,15 @@ button.fa {
     padding-left: 30px;
 }
 
-
-/* input.close {
-    width: 10px;
-    height: 10px;
-} */
-
 .close {
     background: rgba(124, 232, 225, 1);
     position: absolute;
     right: 10px;
     top: 10px;
-    width: 10px;
-    height: 10px;
 }
 
 .color {
-    /* visibility: hidden; */
+    visibility: hidden;
     padding: 10px;
     position: relative;
     right: 0px;
@@ -900,7 +1159,7 @@ width: 50%;
 .enterPsw[type=password] {
     /* Enter your password.. */
     position: absolute;
-    width: 284px;
+    width: 241px;
     height: 30px;
     left: 745px;
     top: 535px;
@@ -926,10 +1185,10 @@ width: 50%;
     box-sizing: border-box;
 }
 
-.reEnterPsw[type=password] {
+.reEnterPsw[type=repassword] {
     /* Re-enter password.. */
     position: absolute;
-    width: 284px;
+    width: 224px;
     height: 30px;
     left: 745px;
     top: 601px;
@@ -1076,7 +1335,7 @@ width: 50%;
 
 .signin_enterPsw[type=password] {
     position: absolute;
-    width: 284px;
+    width: 241px;
     height: 30px;
     left: 467px;
     top: 568px;
