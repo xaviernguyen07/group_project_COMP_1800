@@ -1470,3 +1470,255 @@ width: 50%;
     position: absolute;
     top: -0px;
 }
+
+
+/* create edit popup */
+
+.form-popup_edit {
+    display: none;
+    position: absolute;
+    width: 462px;
+    height: 659px;
+    left: 125px;
+    top: 0px;
+    background: rgba(124, 232, 225, 0.9);
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    z-index: 3;
+    padding-left: 40px;
+}
+
+#popupHeader_edit {
+    /* position: absolute; */
+    width: 399px;
+    height: 20px;
+    /* left: 546px;
+top: 158px; */
+    font-family: Righteous;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 40px;
+    line-height: 79px;
+    letter-spacing: -0.015em;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+#popupTitle_edit {
+    /* position: absolute; */
+    width: 107px;
+    height: 10px;
+    /* left: 293px;
+top: 260px; */
+    font-family: Righteous;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 28px;
+    line-height: 60px;
+    letter-spacing: -0.015em;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+#dateInput_edit {
+    width: 160px;
+    height: 30px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+#timeInput_edit {
+    width: 340px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.95);
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+#planInput_edit {
+    width: 300px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+#planInput_edit::-webkit-input-placeholder {
+    width: 258px;
+    height: 10px;
+    font-family: Righteous;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 28px;
+    line-height: 35px;
+    /* identical to box height */
+    letter-spacing: -0.015em;
+    color: #CCCCCC;
+}
+
+#planInput_edit::-ms-input-placeholder {
+    width: 258px;
+    height: 30px;
+    font-family: Righteous;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 35px;
+    /* identical to box height */
+    letter-spacing: -0.015em;
+    color: #CCCCCC;
+}
+
+#planInput_edit[type=text] {
+    font-size: 24px;
+}
+
+#planInPut_edit::placeholder {
+    width: 258px;
+    height: 30px;
+    font-family: Righteous;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 44px;
+    line-height: 35px;
+    /* identical to box height */
+    letter-spacing: -0.015em;
+    color: #CCCCCC;
+}
+
+#popupDate_edit {
+    width: 60px;
+    height: 30px;
+    font-family: Righteous;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 60px;
+    /* identical to box height */
+    letter-spacing: -0.015em;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+#popupTime_edit {
+    /* position: absolute; */
+    width: 40px;
+    height: 30px;
+    /* left: 758px;
+top: 420px; */
+    font-family: Righteous;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 60px;
+    /* identical to box height */
+    letter-spacing: -0.015em;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+#popupSubtask_edit {
+    /* position: absolute; */
+    width: 195px;
+    height: 10px;
+    /* left: 293px;
+top: 576px; */
+    font-family: Righteous;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    /* line-height: 60px; */
+    /* identical to box height */
+    letter-spacing: -0.015em;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+#subtask_edit[type=text] {
+    font-size: 24px;
+}
+
+#subtask_edit {
+    /* position: absolute; */
+    width: 240px;
+    height: 40px;
+    /* left: 293px;
+top: 700px; */
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+#subtask_edit::-webkit-input-placeholder {
+    /* position: absolute; */
+    width: 300px;
+    height: 25px;
+    /* left: 312px;
+top: 659px; */
+    font-family: Righteous;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 45px;
+    /* identical to box height */
+    letter-spacing: -0.015em;
+    color: #CCCCCC;
+}
+
+#subtask_edit::-ms-input-placeholder {
+    /* position: absolute; */
+    width: 100px;
+    height: 45px;
+    /* left: 312px;
+top: 659px; */
+    font-family: Righteous;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 45px;
+    /* identical to box height */
+    letter-spacing: -0.015em;
+    color: #CCCCCC;
+}
+
+#subtask_edit::placeholder {
+    /* position: absolute; */
+    width: 437px;
+    height: 45px;
+    /* left: 312px;
+top: 659px; */
+    font-family: Righteous;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 45px;
+    /* identical to box height */
+    letter-spacing: -0.015em;
+    color: #CCCCCC;
+}
+
+#confirmButton_edit {
+    /* position: absolute; */
+    width: 175px;
+    height: 50px;
+    /* left: 540px;
+top: 793px; */
+    color: #FFFFFF;
+    font-family: Righteous;
+    font-size: 24px;
+    line-height: 45px;
+    background: #7A4675;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 24px;
+    margin: 10px;
+}
+
+#closeButton_edit {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    left: 150px;
+    top: -500px;
+}
+
+
+/* end edit popup */

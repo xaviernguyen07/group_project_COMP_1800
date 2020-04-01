@@ -111,7 +111,7 @@ app.post("/reminder/delete/:id", reminderController.delete)
 
 // app.get("/reminder/:id", reminderController.listOne)
 
-// app.get("/reminder/:id/edit", reminderController.edit)
+app.get("/reminder/:id", reminderController.edit)
 
 
 

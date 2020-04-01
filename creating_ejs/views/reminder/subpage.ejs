@@ -63,11 +63,32 @@
         </div>
     </div>
 
+    <!--create edit popup window-->
+    <div class="edit-popup">
+        <div class="form-popup_edit" id="popupForm">
+            <form action="post" class="form-container_edit">
+                <h2 id="popupHeader_edit">Edit Reminder</h2>
+                <h4 id="popupTitle_edit">Title</h4>
+                <input type="text" id="planInput_edit" value=<%="" + reminderItem.title %>>
+                <h4 id="popupDate_edit">Date:</h4>
+                <input type="date" id="dateInput_edit" value=<%="" + reminderItem.date %>>
+                <h4 id="popupTime_edit">Time:</h4>
+                <input type="time" id="timeInput_edit" value=<%="" + reminderItem.time %>>
+                <h4 id="popupSubtask_edit">Subtask</h4>
+                <input type="text" id="subtask_edit" value=<%="" + reminderItem.subtask %>>
+                <br><button type="submit" id="confirmButton_edit">Confirm</button>
+            </form>
+            <input type="image" src="closeIcon.png" id="closeButton_edit" alt="Click to close" onclick="closeEditPopup()">
+        </div>
+    </div>
+
+    <!--end edit popup window-->
+
     ​ ​ ​
     <div class="footer">
         ​<input type="button" class="button reminder" value="BRING AN UMBRELLA?">
         <table>
-            <th><input type="button" class="button edit" value="Edit"></th>
+            <th><input type="button" class="button edit" value="Edit" onclick="openEditPopup()"></th>
             <th><button class="button share">Share<i class="fa fa-share-alt"></i></th>
                 <th>
                     <form action=<%="/reminder/delete/" + reminderItem.id %> method="POST">
@@ -82,12 +103,19 @@
         let number = 0;
         label[0].style.backgroundColor = "rgb(" + 130 + "," + 150 + "," + 150 + ")"
         label[1].style.backgroundColor = "rgb(" + 200 + "," + 100 + "," + 150 + ")"
-        label[2].style.backgroundColor = "rgb(" + 250 + "," + 100 + "," + 200 + ")";
+        label[2].style.backgroundColor = "rgb(" + 250 + "," + 100 + "," + 200 + ")"
         label[3].style.backgroundColor = "rgb(" + 20 + "," + 250 + "," + 100 + ")"
         label[4].style.backgroundColor = "rgb(" + 200 + "," + 150 + "," + 100 + ")"
         label[5].style.backgroundColor = "rgb(" + 100 + "," + 100 + "," + 205 + ")"
         label[6].style.backgroundColor = "rgb(" + 230 + "," + 100 + "," + 120 + ")"
         label[7].style.backgroundColor = "rgb(" + 100 + "," + 130 + "," + 120 + ")"
+        function openEditPopup() {
+        document.getElementById("popupForm").style.display = "block";
+    }
+
+    function closeEditPopup() {
+        document.getElementById("popupForm").style.display = "none";
+    }
     </script>
 
 </body>

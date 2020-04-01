@@ -40,11 +40,32 @@
                 </form>
             </div>
         </div>
+
+        <!--create edit popup window-->
+        <div class="edit-popup">
+            <div class="form-popup" id="popupForm">
+                <form action="post" class="form-container_edit">
+                    <h2 id="popupHeader">Edit Reminder</h2>
+                    <h4 id="popupTitle">Title</h4>
+                    <input type="text" id="planInput" value=<%=r eminderItem.title %>>
+                    <h4 id="popupDate">Date:</h4>
+                    <input type="date" id="dateInput" value=<%=r eminderItem.date %>>
+                    <h4 id="popupTime">Time:</h4>
+                    <input type="time" id="timeInput" value=<%=r eminderItem.time %>>
+                    <h4 id="popupSubtask">Subtask</h4>
+                    <input type="text" id="subtask" value=<%=r eminderItem.subtask %>>
+                    <br><button type="submit" id="confirmButton">Confirm</button>
+                    <input type="image" src="closeIcon.png" id="closeButton" alt="Click to close" onclick="closeEditPopup()">
+                </form>
+            </div>
+        </div>
+
+        <!--end edit popup window-->
         ​ ​ ​
         <div class="footer">
             ​<input type="button" class="button reminder" value="BRING AN UMBRELLA?">
             <table>
-                <th><input type="button" class="button edit" value="Edit"></th>
+                <th><input type="button" class="button edit" value="Edit" onclick="openEditPopup()"></th>
                 <th><button class="button share">Share<i class="fa fa-share-alt"></i></th>
                 <th><button class="button delete">Delete<i class="btn fa fa-trash"></i></th>
         </table>
@@ -53,5 +74,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <script src='script.js'></script>
+    <script>
+            function openEditPopup() {
+        document.getElementById("popupForm").style.display = "block";
+    }
+
+    function closeEditPopup() {
+        document.getElementById("popupForm").style.display = "none";
+    }
+    </script>
     </div>
     </body>

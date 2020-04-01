@@ -51,6 +51,15 @@ let remindersController = {
         res.redirect('/reminder');
     },
 
+    edit: (req, res) => {
+        let reminderToFind = req.params.id;
+        let searchResult = Database.cindy.reminders.find(function(reminder) {
+            return reminder.id == reminderToFind; // Why do you think I chose NOT to use === here?
+        })
+        res.render('reminder/subpage', { reminderItem: searchResult })
+
+    },
+
     // create_tag: (req, res) => {
     //     let tag = {
     //         tag: req.body.tag
