@@ -12,6 +12,10 @@ const protectedRoutes = require('../middlewares/protectedRoutes');
 router.get('/empty_page', (req, res, next) => {
     res.render('partials/empty_page');
 });
+router.post('/empty_page', (req, res )=>{
+    console.log("hi")
+    res.redirect("/");
+})
 
 // router.get("/reminder", (req, res, next) => {
 //     res.render('partials/profile', { reminders: Reminder })
@@ -32,32 +36,31 @@ router.get("/:id", (req, res, next) => {
         res.render('partials/empty_page', { reminders: Reminder })
     }
 })
-router.get('/abc', protectedRoutes, async(req, res) => {
-    res.render('partials/profile', { reminders: Reminder })
+
+router.get('/', (req, res, next) => {
+    res.render('partials/profile');
 });
+
 // Creating one
-router.post('/abc', (req, res, next) => {
-    // const reminder = new Reminder({
-    //     title: req.body.title,
-    //     dat: req.body.date,
-    //     time: req.body.time,
-    //     Subtask: req.body.Subtask,
-    //     tag: []
-    // })
+router.post('/', (req, res, next) => {
     dt = new Date(req.body.date + ' ' + req.body.time)
     
-    console.log(req.session.currentUser);
-    console.log(req.session.subtask);
+    console.log(req.session.currentUser.username);
+    console.log(req.body.title);
+    console.log(req.body.description);
+    console.log(req.body.subtask);
+    console.log(req.body.subtaskArray);
+    console.log(dt);
 
     Reminder.create({
-        username: req.session.currentUser,
+        username: req.session.currentUser.username,
         title: req.body.title,
         description: req.body.description,
         datetime: dt,
         subtask: req.body.subtask,
         tags: []
     }).then(() => {
-        res.redirect('/');
+        res.redirect('/users/profile');
     })
     .catch(error => {
         next(error);

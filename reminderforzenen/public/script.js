@@ -77,6 +77,7 @@ $(document).ready(function() {
 
     //create button functionality
     $('#create').click(function() {
+        
         let title = $('#title').val();
         console.log(title);
 
