@@ -1,0 +1,29 @@
+Here is the explanation for the code armaan included:
+2:32
+[4:38 PM]So I tried to put something together for you. Most of the code is code you wrote in your modules
+[4:39 PM] the thing I changed to keep things easier (since your group is server-side rendering your application)
+[4:39 PM] is I switched to session-based authentication
+[4:39 PM] and i'm storing each session in MongoDB
+[4:40 PM] with a TTL (time to live) of 1 day
+[4:40 PM] so when you run that code ^
+[4:40 PM] npm start to begin the application (then go to localhost3000)
+[4:40 PM] or you can do npm start-dev
+[4:40 PM] which does the same thing but has nodemon in the background
+[4:41 PM] if you go to localhost:3000/
+[4:41 PM] ^that is your landing page route
+[4:41 PM] localhost:3000/users
+[4:41 PM] ^page to login
+[4:41 PM] localhost:3000/signup
+[4:41 PM] ^page to signup
+[4:42 PM] I took your code for dark sky, which worked perfectly
+[4:42 PM] and put it into a folder called darkSkyService
+[4:42 PM] You'll notice:
+[4:42 PM] router.get('/profile', protectedRoutes
+[4:42 PM] if you try and go to /users/profile
+[4:43 PM] there is a "protectedRoutes" middleware function that will confirm if the user is logged in (redirecting back to login page if they are not)
+[4:43 PM] if they are logged in, you'll be able to access the profile page
+[4:43 PM] which in your groups case is likely the reminder list page
+[4:43 PM] on that page, I trigger your dark sky service api async call
+[4:43 PM] and pass the data from that call to an ejs template
+[4:44 PM] so you can see it being rendered
+[4:44 PM] Hope this helps, please let me know if you have any problems running the code

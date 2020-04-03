@@ -14,6 +14,7 @@ const MONGOURI = process.env.MONGOURI;
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 
+
 mongoose.connect(MONGOURI , { useNewUrlParser: true })
     .then(() => console.log('connected'))
     .catch(error => console.log('error', error));
@@ -96,3 +97,4 @@ app.use((err, req, res) => {
 // app.use('/posts', usersRouter)
 
 module.exports = app;
+

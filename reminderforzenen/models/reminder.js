@@ -3,10 +3,11 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const reminderSchema = new Schema({
+    username: String,
     title: String,
-    date: String,
-    time: String,
-    subtask: String,
+    description: String,
+    datetime: Date,
+    subtask: [],
     tags: []
 });
 
