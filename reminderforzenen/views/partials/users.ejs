@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <div id="id01" class="bg">
+        <h1 class="title">Welcome to Reminder</h1>
+
+
+        <form class="modal-content" action="/users/login" method="POST">
+            <label class="signin_email" for="username"><b>Email Address</b></label>
+            <input class="signin_enterEmail" type="text" placeholder="Enter Email" name="username" required>
+
+            <label class="signin_psw" for="password"><b>Password</b></label>
+            <a class="signin_forgetps" href="forgot_password.html">Forgot Password?</a>
+            <input class="signin_enterPsw" type="password" placeholder="Enter Password" name="password" required>
+            <% if (errorMessage) { %>
+                <div class="error-message">
+                    <%= errorMessage %>
+                </div>
+                <% } %>
+
+                    <div class="signin_clearfix">
+                        <button type="submit" class="signin_login">Log in</button>
+                    </div>
+        </form>
+        <div>
+            <a href="/users/signup"><button type="signin" class="signin_signupbtn">Sign Up</button></a>
+        </div>
+    </div>
+
+    <script>
+    </script>
+
+</body>
+
+</html>

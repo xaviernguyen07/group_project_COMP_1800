@@ -1,0 +1,132 @@
+<body class="submain">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(".open").click(function() {
+                $(".color").addClass("active");
+            });
+            $(".close").click(function() {
+                $(".color").removeClass("active");
+            });
+            $('#date').pickadate({
+                formatSubmit: 'mm/dd/yyyy',
+                hiddenName: false
+            });
+            $('#time').pickatime({
+                formatSubmit: 'HH:i',
+                hiddenName: false
+            });
+        });
+    </script>
+    ​ ​
+
+
+    <div class="control_space">
+        <h1>
+            <%= reminderItem.title %>
+        </h1>
+
+
+
+        <% for (var item in reminderItem.tag){ %>
+            <label class="lab"><%= reminderItem.tag[item] %></label>
+            <% } %>
+
+
+
+                <h3>Time:
+                    <%= reminderItem.time %>
+                </h3>
+                <p id="time">Clender
+                    <%= reminderItem.date %>
+                </p>
+                ​
+                <h3>Subtasks: </h3>
+                <ul class="subtask">
+                    <li>
+                        <%= reminderItem.subtask %>
+                    </li>
+                </ul>
+                <p class="open" id="btn">+</p>
+
+
+    </div>
+
+    <div class="color">
+        <div class="button_part">
+            <button class="close">X</button>
+            <form action=<%="/reminder/" + reminderItem.id %> method="POST">
+                <h2>Add tag to reminder</h2>
+                <h4>Existing tags:</h4>
+                <% for (var item in reminderItem.tag){ %>
+                    <label class="lab"><%= reminderItem.tag[item] %></label>
+                    <% } %>
+                        <br>
+                        <h4>Add new tag:</h4>
+                        <input placeholder="Enter tag name..." type="text" name="tag" id="tag">
+                        <br>
+                        <span class="dot1"></span><span class="dot2"></span><span class="dot3"></span><span class="dot4"></span><span class="dot5"></span><span class="dot6"></span>
+                        <br>
+                        <br>
+                        <button class="button tag">Add tag</button>
+            </form>
+        </div>
+    </div>
+
+    <!--create edit popup window-->
+    <div class="edit-popup">
+        <div class="form-popup_edit" id="popupForm">
+            <form action="<%= " /reminder/update/ " + reminderItem.id %>" class="form-container_edit" method="POST">
+                <h2 id="popupHeader_edit">Edit Reminder</h2>
+                <h4 id="popupTitle_edit">Title</h4>
+                <input name="title" type="text" id="planInput_edit" value=<%="" + reminderItem.title %> >
+                <h4 id="popupDate_edit">Date:</h4>
+                <input name="date" type="text" id="date" class="dateInput_edit" value=<%="" + reminderItem.date.toString() %>>
+                <h4 id="popupTime_edit">Time:</h4>
+                <input name="time" type="time" id="time" class="timeInput_edit" value=<%="" + reminderItem.time %>>
+                <h4 id="popupSubtask_edit">Subtask</h4>
+                <input name="subtask" type="text" id="subtask_edit" value=<%="" + reminderItem.subtask %>>
+                <br><button type="submit" id="confirmButton_edit">Confirm</button>
+            </form>
+            <input type="button" value="X" id="closeButton_edit" alt="Click to close" onclick="closeEditPopup()">
+        </div>
+    </div>
+
+    <!--end edit popup window-->
+
+    ​ ​ ​
+    <div class="footer">
+        ​<input type="button" class="button reminder" value="BRING AN UMBRELLA?">
+        <table>
+            <th><input type="button" class="button edit" value="Edit" onclick="openEditPopup()"></th>
+            <th><button class="button share">Share<i class="fa fa-share-alt"></i></th>
+                <th>
+                    <form action=<%="/reminder/delete/" + reminderItem.id %> method="POST">
+                    <button class="button delete">Delete<i class="btn fa fa-trash">
+                    </form>
+                </th>
+
+        </table>
+    </div>
+    <script>
+        let label = document.getElementsByTagName("label");
+        let number = 0;
+        label[0].style.backgroundColor = "rgb(" + 130 + "," + 150 + "," + 150 + ")"
+        label[1].style.backgroundColor = "rgb(" + 200 + "," + 100 + "," + 150 + ")"
+        label[2].style.backgroundColor = "rgb(" + 250 + "," + 100 + "," + 200 + ")"
+        label[3].style.backgroundColor = "rgb(" + 20 + "," + 250 + "," + 100 + ")"
+        label[4].style.backgroundColor = "rgb(" + 200 + "," + 150 + "," + 100 + ")"
+        label[5].style.backgroundColor = "rgb(" + 100 + "," + 100 + "," + 205 + ")"
+        label[6].style.backgroundColor = "rgb(" + 230 + "," + 100 + "," + 120 + ")"
+        label[7].style.backgroundColor = "rgb(" + 100 + "," + 130 + "," + 120 + ")"
+        function openEditPopup() {
+        document.getElementById("popupForm").style.display = "block";
+    }
+
+    function closeEditPopup() {
+        document.getElementById("popupForm").style.display = "none";
+    }
+    </script>
+
+</body>
+​

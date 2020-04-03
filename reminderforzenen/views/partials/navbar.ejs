@@ -1,0 +1,15 @@
+<div class="topnav">
+    <div class="search-container">
+        <form action="/action_page.php">
+            <input type="text" placeholder="Search reminder..." name="search">
+            <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+    </div>
+    <div class="btn-friend-logout">
+        <a href="/users/logout" class="btn_text">Logout</a>
+        <a href="#invite" class="btn_text">Invite Friends</a>
+        <a href="#invite" class="btn_text">Welcome
+            <%= user.username %>
+        </a>
+    </div>
+</div>
