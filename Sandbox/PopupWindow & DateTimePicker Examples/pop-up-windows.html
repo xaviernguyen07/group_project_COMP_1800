@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://common.olemiss.edu/_js/pickadate.js-3.5.3/lib/themes/classic.css" id="theme_base">
+    <link rel="stylesheet" href="https://common.olemiss.edu/_js/pickadate.js-3.5.3/lib/themes/classic.date.css" id="theme_date">
+    <link rel="stylesheet" href="https://common.olemiss.edu/_js/pickadate.js-3.5.3/lib/themes/classic.time.css" id="theme_time">
+    <style>
+        /*
+        popup window
+        */
+        a.selected {
+        background-color:#1F75CC;
+        color:white;
+        z-index:100;
+        }
+
+        .messagepop {
+        background-color:rgba(124, 232, 225, 0.9);
+        border:1px solid #999999;
+        cursor:default;
+        display:none;
+        margin-top: 15px;
+        position:absolute;
+        text-align:left;
+        width:394px;
+        z-index:50;
+        padding: 25px 25px 20px;
+        }
+
+        label {
+        display: block;
+        margin-bottom: 3px;
+        padding-left: 15px;
+        text-indent: -15px;
+        }
+
+        .messagepop p, .messagepop.div {
+        border-bottom: 1px solid #EFEFEF;
+        margin: 8px 0;
+        padding-bottom: 8px;
+        }
+        /*
+        end popup window
+        */
+    </style>
+</head>
+<body>
+    
+
+    <div class="messagepop pop">
+        <h2>New Reminder</h2>
+
+        <h4>Title:</h4>
+        <input placeholder="Enter reminder title.." type="text" name="title" id="title">
+        </br>
+
+        <h4>Date:</h4>
+        <input placeholder="Pick date.."type="text" name="date" id="date">
+        </br>
+
+        <h4>Time:</h4>
+        <input placeholder="Pick time.."type="text" name="time" id="time">
+        </br>
+
+        <h4>Subtask:</h4>
+        <div id='subtasks-div'>
+            <input type="text" placeholder="Enter subtask.." name="subtask" class="subtask">
+        </div>
+        </br>
+        <a href='#' id='add-more-subtasks'>add more<a>
+        </br>
+        </br>
+        <button id='create'>Create</button>
+    </div>
+    
+    <button id='create-new-reminder'>create new</button>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://common.olemiss.edu/_js/pickadate.js"></script>
+    <script type="text/javascript">
+        /*
+        date/time picker
+        */
+        $('#date').pickadate( {
+            formatSubmit: 'mm/dd/yyyy',
+            hiddenName: false
+        } );
+
+        $('#time').pickatime( {
+            formatSubmit: 'HH:i',
+            hiddenName: false
+        } );
+        /*
+        date/time picker
+        */
+             
+        /*
+        popup window
+        */
+        function deselect(e) {
+            $('.pop').slideFadeToggle(function() {
+                e.removeClass('selected');
+            });    
+        }
+
+        $(function() {
+            $('#create-new-reminder').on('click', function() {
+                if($(this).hasClass('selected')) {
+                    deselect($(this));               
+                } else {
+                    $(this).addClass('selected');
+                    $('.pop').slideFadeToggle();
+                }
+                return false;
+            });
+
+            $('.close').on('click', function() {
+                deselect($('#create-new-reminder'));
+                return false;
+            });
+        });
+
+        $.fn.slideFadeToggle = function(easing, callback) {
+            return this.animate({ opacity: 'toggle', height: 'toggle' }, 'fast', easing, callback);
+        };
+        /*
+        end popup window
+        */
+        
+        //add-more button functionality
+        $('#add-more-subtasks').click(function(){
+            //maximum 5 subtasks
+            //make this variable static
+            if (typeof subtaskCount == 'undefined'){
+                subtaskCount = 1;
+            }
+
+            //get all subtasks then store in array
+            let subtaskArray = []
+            $('.subtask').each(function(){
+                subtaskArray.push($(this).val());
+            });
+
+            //check if theres any empty one, and subtasks of more than 4
+            //if not, add subtask input field
+            if(!subtaskArray.includes("") && subtaskCount < 5){
+                input = $('<input type="text" placeholder="Enter subtask.." name="subtask" class="subtask">');
+                $('#subtasks-div').append(input);
+                subtaskCount++;
+            }
+        })
+
+        //create button functionality
+        $('#create').click(function(){
+            let title = $('#title').val();
+            console.log(title);
+
+            //get date as a string
+            let date = $('#date').val();
+            console.log(date);
+            
+            //get time as a string
+            let time = $('#time').val();
+            console.log(time);
+
+            //store them together to a Date object
+            let dateObject = new Date(date +' '+time);
+            console.log(dateObject);
+
+            //array to store subtasks
+            let subtaskArray = [];
+            //store all non-empty subtasks
+            $('.subtask').each(function(){
+                if($(this).val() != ''){
+                    subtaskArray.push($(this).val());
+                }
+            });
+            console.log(subtaskArray);
+        });
+    </script>
+</body>
+</html>

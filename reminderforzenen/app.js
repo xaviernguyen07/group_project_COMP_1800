@@ -7,12 +7,14 @@ const logger = require('morgan');
 const mongoose = require('mongoose');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
+require('dotenv').config()
+const MONGOURI = process.env.MONGOURI;
 
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 
-mongoose.connect('mongodb://localhost:27017/starter-template', { useNewUrlParser: true })
+mongoose.connect(MONGOURI , { useNewUrlParser: true })
     .then(() => console.log('connected'))
     .catch(error => console.log('error', error));
 

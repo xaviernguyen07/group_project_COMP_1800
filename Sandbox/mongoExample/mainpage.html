@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        body {
+            position: relative;
+            width: 1500px;
+            height: 1000px;
+            background: #FFFFFF;
+        }
+        /* modify the design */
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        h1 {
+            font-family: Righteous;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 48px;
+            line-height: 60px;
+            /* identical to box height */
+            letter-spacing: -0.015em;
+            color: rgba(0, 0, 0, 0.8);
+        }
+        
+        h3 {
+            font-family: Righteous;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 22px;
+            line-height: 27px;
+            letter-spacing: -0.015em;
+            color: rgba(0, 0, 0, 0.7);
+        }
+        
+        label.lab {
+            /* Rectangle 11 */
+            padding: 8px;
+            background: #926CFE;
+            border-radius: 22px;
+            font-family: Righteous;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 22px;
+            line-height: 27px;
+            letter-spacing: -0.015em;
+            color: #FFFFFF;
+            margin: 3px;
+        }
+        
+        span.dot {
+            height: 15px;
+            width: 15px;
+            background: #FE6C6C;
+            border-radius: 50%;
+            display: inline-block;
+            margin-top: 10px;
+            margin-left: 5px;
+        }
+        
+        #time {
+            font-family: Righteous;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 32px;
+            line-height: 40px;
+            /* identical to box height */
+            letter-spacing: -0.015em;
+            text-decoration-line: underline;
+            color: #0094FF;
+        }
+        
+        ul.substask {
+            font-family: Righteous;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 28px;
+            line-height: 35px;
+            letter-spacing: -0.015em;
+            color: rgba(0, 0, 0, 0.7);
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        table.reminderTable {
+            list-style: none;
+            width: 590px;
+        }
+        
+        td {
+            height: 70px;
+            font-family: Righteous;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 38px;
+            line-height: 47px;
+            letter-spacing: -0.015em;
+            color: rgba(0, 0, 0, 0.8);
+            border-bottom: solid;
+            border-color: #999;
+        }
+        
+        li {
+            list-style-type: circle;
+            font-family: Righteous;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 28px;
+            line-height: 35px;
+            letter-spacing: -0.015em;
+            color: rgba(0, 0, 0, 0.7);
+        }
+        
+        input {
+            width: 15px;
+            height: 15px;
+            position: relative;
+            top: -15px;
+            left: 11px;
+        }
+        
+        img.btn {
+            width: 5%;
+            position: absolute;
+            right: 40px;
+            top: 118px;
+            padding: 8px;
+        }
+        
+        img.btn:hover {
+            opacity: 50%;
+        }
+        
+        #wrapper {
+            /* Main */
+            position: relative;
+            width: 1500px;
+            height: 1000px;
+            background: #FFFFFF;
+        }
+        
+        .navbar {
+            overflow: hidden;
+            /* background */
+            position: absolute;
+            width: 1500px;
+            height: 70px;
+            left: 0px;
+            top: 0px;
+            background: #7CE8E1;
+            border: 1px solid #69E9E1;
+            box-sizing: border-box;
+        }
+        
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+        
+        .navbar a.right {
+            float: right;
+        }
+        
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        
+        .button {
+            background-color: #1aa;
+            /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+        
+        .row {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        
+        .side {
+            float: left;
+            position: absolute;
+            width: 610px;
+            height: 930px;
+            left: 0px;
+            top: 70px;
+            background: #EFEFEF;
+        }
+        
+        .main {
+            float: left;
+            /* Rectangle 8 */
+            position: absolute;
+            width: 890px;
+            height: 930px;
+            left: 610px;
+            top: 70px;
+            background: white;
+        }
+        
+        .control_space {
+            padding-left: 51px;
+        }
+        
+        .footer {
+            padding: 20px;
+            text-align: center;
+            background: #ddd;
+        }
+        
+         :placeholder-shown {
+            position: absolute;
+            width: 758px;
+            height: 51px;
+            left: 23px;
+            top: 9px;
+            background: #FFFFFF;
+            border-radius: 4px;
+        }
+        
+         ::placeholder {
+            position: absolute;
+            width: 187px;
+            height: 30px;
+            left: 47px;
+            top: 20px;
+            font-family: Righteous;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 24px;
+            line-height: 30px;
+            /* identical to box height */
+            letter-spacing: -0.015em;
+            color: #CCCCCC;
+        }
+        
+        #inviteFriends {
+            position: absolute;
+            width: 213px;
+            height: 45px;
+            left: 1032px;
+            top: 15px;
+            font-family: Righteous;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 36px;
+            line-height: 45px;
+            /* identical to box height */
+            letter-spacing: -0.015em;
+            color: #FFFFFF;
+            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        }
+        
+        #logOut {
+            position: absolute;
+            width: 127px;
+            height: 45px;
+            left: 1301px;
+            top: 15px;
+            font-family: Righteous;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 36px;
+            line-height: 45px;
+            /* identical to box height */
+            letter-spacing: -0.015em;
+            color: #FFFFFF;
+            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        }
+        
+        #searchIcon {
+            position: absolute;
+            width: 27px;
+            height: 27px;
+            left: 742px;
+            top: 16px;
+            background: #FFFFFF;
+            box-sizing: border-box;
+        }
+        
+        .button.reminder {
+            position: absolute;
+            width: 776px;
+            height: 110px;
+            left: 668px;
+            top: 757px;
+            background: #7CE8E1;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 34px;
+        }
+        
+        .button.reminder {
+            font-family: Righteous;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 64px;
+            line-height: 79px;
+            letter-spacing: -0.015em;
+            color: #FFFFFF;
+        }
+        
+        .button.edit {
+            position: absolute;
+            width: 230px;
+            height: 70px;
+            left: 668px;
+            top: 905px;
+            background: #7A4675;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 18px;
+        }
+        
+        .button.edit {
+            font-family: Righteous;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 36px;
+            line-height: 45px;
+            /* identical to box height */
+            letter-spacing: -0.015em;
+            color: #FFFFFF;
+        }
+        
+        .button.share {
+            position: absolute;
+            width: 230px;
+            height: 70px;
+            left: 941px;
+            top: 905px;
+            background: #7A4675;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 18px;
+        }
+        
+        .button.share {
+            font-family: Righteous;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 36px;
+            line-height: 45px;
+            /* identical to box height */
+            letter-spacing: -0.015em;
+            color: #FFFFFF;
+        }
+        
+        .button.delete {
+            position: absolute;
+            width: 230px;
+            height: 70px;
+            left: 1214px;
+            top: 905px;
+            background: #7A4675;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 18px;
+        }
+        
+        .button.delete {
+            font-family: Righteous;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 36px;
+            line-height: 45px;
+            /* identical to box height */
+            letter-spacing: -0.015em;
+            color: #FFFFFF;
+        }
+        
+        .button.create {
+            position: absolute;
+            width: 285px;
+            height: 70px;
+            left: 54px;
+            top: 905px;
+            background: #7A4675;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 24px;
+        }
+        
+        .button.create {
+            font-family: Righteous;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 36px;
+            line-height: 45px;
+            /* identical to box height */
+            letter-spacing: -0.015em;
+            color: #FFFFFF;
+        }
+        
+        button.btn.fa {
+            position: absolute;
+            width: 73px;
+            height: 70px;
+            left: 372px;
+            top: 905px;
+            background: #7A4675;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 24px;
+        }
+        
+        button.fa {
+            position: absolute;
+            width: 73px;
+            height: 70px;
+            left: 477px;
+            top: 905px;
+            background: #7A4675;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 24px;
+        }
+        /* choose tag section --------------------------------------------------*/
+        
+        #button_part {
+            width: 20%;
+            height: 300px;
+            position: absolute;
+            right: 80px;
+            top: 150px;
+            /* only for demonstration, should be removed */
+        }
+        
+        .color {
+            padding: 10px;
+            display: none;
+            position: relative;
+            right: 0px;
+            top: 0px;
+        }
+        /* color tag */
+        
+        #button1 {
+            width: 200px;
+            height: 60px;
+            background-color: #eee;
+            color: red;
+            border-radius: 22px;
+            border: 5px solid red;
+            font-size: 1em;
+            text-align: center;
+            box-shadow: 5px 5px 5px #888;
+            display: inline-block;
+        }
+        
+        #button2 {
+            width: 200px;
+            height: 60px;
+            background-color: #eee;
+            color: #FA6900;
+            border-radius: 22px;
+            border: 5px solid #FA6900;
+            font-size: 1em;
+            text-align: center;
+            box-shadow: 5px 5px 5px #888;
+            display: inline-block;
+        }
+        
+        #button3 {
+            width: 200px;
+            height: 60px;
+            background-color: #eee;
+            color: yellow;
+            border-radius: 22px;
+            border: 5px solid yellow;
+            font-size: 1em;
+            text-align: center;
+            box-shadow: 5px 5px 5px #888;
+            display: inline-block;
+        }
+        
+        #button4 {
+            width: 200px;
+            height: 60px;
+            border-radius: 22px;
+            background-color: #eee;
+            color: green;
+            text-align: center;
+            font-size: 1em;
+            border: 5px solid green;
+            box-shadow: 5px 5px 5px #888;
+            display: inline-block;
+        }
+        
+        #button5 {
+            width: 200px;
+            height: 60px;
+            background-color: #eee;
+            border-radius: 22px;
+            color: blue;
+            text-align: center;
+            font-size: 1em;
+            border: 5px solid blue;
+            box-shadow: 5px 5px 5px #888;
+            display: inline-block;
+            position: relative;
+        }
+        
+        #button6 {
+            width: 200px;
+            height: 60px;
+            background-color: #eee;
+            border-radius: 22px;
+            color: Indigo;
+            text-align: center;
+            font-size: 1em;
+            border: 5px solid Indigo;
+            box-shadow: 5px 5px 5px #888;
+            display: inline-block;
+            position: relative;
+        }
+        
+        #button7 {
+            width: 200px;
+            height: 60px;
+            background-color: #eee;
+            border-radius: 22px;
+            color: purple;
+            text-align: center;
+            font-size: 1em;
+            border: 5px solid purple;
+            box-shadow: 5px 5px 5px #888;
+            display: inline-block;
+            position: relative;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#btn").click(function() {
+                $(".color").slideToggle("slow");
+            });
+        });
+    </script>
+</head>
+
+<body>
+    ​ ​
+    <div id="wrapper">
+        ​ ​
+        <div class="navbar">
+            <table>
+                <tr>
+                    <th><input type="text" placeholder="Search reminder..">
+                        <div id="searchIcon">
+                            <img src="images/searchIcon.jpg">
+                        </div>
+                    </th>
+                    <th id="inviteFriends">Invite friends</th>
+                    <th id="logOut">Log out</th>
+                </tr>
+            </table>
+
+        </div>
+        ​
+        <div class="row">
+            <div class="side" style='overflow:scroll;'>
+                <table class="reminderTable">
+                    <tr>
+                        <td><input type="checkbox" id="reminder1" name="reminder1" value="reminder1">
+                            <label for="reminder1">the first example of reminder</label><label class="lab-related"><span
+                                    class="dot"></span><span class="dot"></span>
+                        </td>
+                    </tr>
+                    <div>
+                        <table>
+                            <th><input type="button" class="button create" value="Create new"></th>
+                            <th><button style="font-size: 37px" class="fa fa-share-alt"></button></th>
+                            <th><button style="font-size: 37px" class="btn fa fa-trash"></button></th>
+                        </table>
+                    </div>
+                    ​ ​
+                </table>
+            </div>
+            <div class="main">
+                <div class="control_space">
+                    <h1>title</h1>
+                    <label class="lab">label1</label><label class="lab">label2</label>
+
+                            <h3>Time: </h3>
+                            <p id="time">Clender</p>
+                            ​
+                            <h3>Subtasks: </h3>
+                            <ul class="subtask">
+                                <li>list1</li>
+                                <li>list2</li>
+                            </ul>
+                            <img class="btn" id="btn" src="images/cross_button.png">
+
+
+            </div>
+            <div id="button_part">
+                <div class="color" id="button1">LINK1</div>
+                <div class="color" id="button2">LINK2</div>
+                <div class="color" id="button3">LINK3</div>
+                <div class="color" id="button4">LINK4</div>
+                <div class="color" id="button5">LINK5</div>
+                <div class="color" id="button6">LINK6</div>
+                <div class="color" id="button7">LINK7</div>
+            </div>
+            ​ ​
+        </div>
+        ​
+        <div class="footer">
+            ​<input type="button" class="button reminder" value="BRING AN UMBRELLA?">
+            <table>
+                <th><input type="button" class="button edit" value="Edit"></th>
+                <th><button class="button share">Share<i class="fa fa-share-alt"></i></th>
+                    <th><button class="button delete">Delete<i class="btn fa fa-trash"></i></th>
+                </table>
+            </div>
+            ​
+        </div>
+        ​
+        <script>
+        </script>
+        ​
+</body>
+​
+
+</html>
