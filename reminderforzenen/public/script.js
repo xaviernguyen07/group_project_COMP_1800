@@ -69,7 +69,7 @@ $(document).ready(function() {
         } else if (subtaskCount >= 5) {
 
         } else {
-            input = $('<input type="text" placeholder="Enter subtask.." name="subtask-input" class="subtask-input">');
+            input = $('<input type="text" placeholder="Enter subtask.." name="subtask" class="subtask-input">');
             $('#subtasks-div').append(input);
             subtaskCount++;
         }
@@ -77,6 +77,7 @@ $(document).ready(function() {
 
     //create button functionality
     $('#create').click(function() {
+        
         let title = $('#title').val();
         console.log(title);
 

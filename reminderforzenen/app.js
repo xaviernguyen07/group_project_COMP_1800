@@ -7,12 +7,16 @@ const logger = require('morgan');
 const mongoose = require('mongoose');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
+require('dotenv').config()
+const MONGOURI = process.env.MONGOURI;
 
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
+const reminderRouter = require('./routes/reminders');
 
-mongoose.connect('mongodb://localhost:27017/starter-template', { useNewUrlParser: true })
+
+mongoose.connect(MONGOURI , { useNewUrlParser: true })
     .then(() => console.log('connected'))
     .catch(error => console.log('error', error));
 
@@ -60,7 +64,6 @@ app.use((req, res, next) => {
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-const reminderRouter = require('./routes/reminders');
 app.use('/users/profile', reminderRouter);
 
 
@@ -93,4 +96,37 @@ app.use((err, req, res) => {
 // // add path in postsRoute
 // app.use('/posts', usersRouter)
 
+app.post('/abc', (req, res) => {
+    // const reminder = new Reminder({
+    //     title: req.body.title,
+    //     dat: req.body.date,
+    //     time: req.body.time,
+    //     Subtask: req.body.Subtask,
+    //     tag: []
+    // })
+    dt = new Date(req.body.date + ' ' + req.body.time)
+    
+    console.log(req.session.currentUser);
+    console.log(req.session.subtask);
+
+    Reminder.create({
+        username: req.session.currentUser,
+        title: req.body.title,
+        description: req.body.description,
+        datetime: dt,
+        subtask: req.body.subtask,
+        tags: []
+    } )
+    res.redirect('/');
+    // try {
+    //     const newReminder = await reminder.save()
+    //     res.status(201).json(newReminder)
+    //     res.redirect('/users/profile');
+    // } catch (err) {
+    //     res.status(400).json({ message: err.message })
+    // }
+});
+
+
 module.exports = app;
+

@@ -63,7 +63,7 @@ router.post('/signup', (req, res, next) => {
                         next(error);
                     })
             } else {
-                res.render('partials/signup', { errorMessage: "Incorrect Username or Password" });
+                res.render('partials/signup', { errorMessage: "User already exists." });
             }
         })
         .catch(error => {
