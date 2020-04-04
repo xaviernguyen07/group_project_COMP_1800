@@ -10,7 +10,7 @@
                 <input placeholder="Enter reminder title.." type="text" name="title" id="title">
 
                 <h4>Descripion:</h4>
-                <input placeholder="Enter descripion.." type="text" name="descripion" id="descripion">
+                <input placeholder="Enter description.." type="text" name="description" id="description">
 
                 <h4>Date:</h4>
                 <input placeholder="Pick date.." type="text" name="date" id="date">
@@ -36,17 +36,17 @@
         <div class="side" style='overflow:scroll;'>
             <table class="reminderTable">
                 <% if(typeof reminders != 'undefined') { %>
-                    <% reminders.forEach(function (reminderItem) { %>
+                    <% for(let i = 0; i < reminders.length;i++){ %>
                         <tr>
                             <td>
                                 <input type="checkbox" id="reminder" name="reminder" value="reminder">
                                 <label for="reminder1">
-                                <a target="iframe_a" href=<%="/reminder/" + reminderItem.id %>><%= reminderItem.title %></a>
+                                <a target="iframe_a" href=<%="/users/profile/" + reminders.id %>><%= reminders.title %></a>
                             </label>
                                 <span class="dot"></span><span class="dot"></span>
                             </td>
                         </tr>
-                        <% }) %>
+                        <% } %>
                             <% } else { %>
                                 <% } %>
 
