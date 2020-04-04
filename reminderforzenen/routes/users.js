@@ -27,7 +27,11 @@ router.get('/profile', protectedRoutes, async(req, res) => {
     const latitude = 30.0;
     const longitude = -45.0;
     let darkSkyResults = await darkSky(latitude, longitude);
-    res.render('partials/profile', { user: req.session.currentUser, data: darkSkyResults });
+    const reminders = await Reminder.find();
+    console.log(reminders);
+
+    res.render('partials/profile', { user: req.session.currentUser, data: darkSkyResults, reminders: reminders });
+
 });
 
 router.get('/profile', protectedRoutes, async(req, res) => {

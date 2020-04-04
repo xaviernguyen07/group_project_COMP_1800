@@ -35,10 +35,10 @@
 
 
                 <h3>Time:
-                    <%= reminderItem.time %>
+                    <%= reminderItem.datetime %>
                 </h3>
                 <p id="time">Clender
-                    <%= reminderItem.date %>
+                    <%= reminderItem.datetime %>
                 </p>
                 ​
                 <h3>Subtasks: </h3>
@@ -81,7 +81,7 @@
                 <h4 id="popupTitle_edit">Title</h4>
                 <input name="title" type="text" id="planInput_edit" value=<%="" + reminderItem.title %> >
                 <h4 id="popupDate_edit">Date:</h4>
-                <input name="date" type="text" id="date" class="dateInput_edit" value=<%="" + reminderItem.date.toString() %>>
+                <input name="date" type="text" id="date" class="dateInput_edit" value=<%="" + reminderItem.date %>>
                 <h4 id="popupTime_edit">Time:</h4>
                 <input name="time" type="time" id="time" class="timeInput_edit" value=<%="" + reminderItem.time %>>
                 <h4 id="popupSubtask_edit">Subtask</h4>

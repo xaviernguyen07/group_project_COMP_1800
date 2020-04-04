@@ -36,17 +36,17 @@
         <div class="side" style='overflow:scroll;'>
             <table class="reminderTable">
                 <% if(typeof reminders != 'undefined') { %>
-                    <% reminders.forEach(function (reminderItem) { %>
+                    <%for(let i = 0; i < reminders.length; i++) { %>
                         <tr>
                             <td>
                                 <input type="checkbox" id="reminder" name="reminder" value="reminder">
                                 <label for="reminder1">
-                                <a target="iframe_a" href=<%="/reminder/" + reminderItem.id %>><%= reminderItem.title %></a>
+                                <a target="iframe_a" href=<%="/users/profile/" + reminders[i].id %>><%= reminders[i].id %><%= reminders[i].title %></a>
                             </label>
                                 <span class="dot"></span><span class="dot"></span>
                             </td>
                         </tr>
-                        <% }) %>
+                        <% } %>
                             <% } else { %>
                                 <% } %>
 
@@ -63,6 +63,6 @@
         </div>
     </div>
 
-    <iframe src="http://localhost:3000/users/profile/empty_page" class="main" name="iframe_a"></iframe> ​ ​
+    <iframe src="/users/profile/empty_page" class="main" name="iframe_a"></iframe> ​ ​
     </div>
     ​
