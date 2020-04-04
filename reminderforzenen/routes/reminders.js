@@ -44,14 +44,6 @@ router.get('/', (req, res, next) => {
 // Creating one
 router.post('/', (req, res, next) => {
     dt = new Date(req.body.date + ' ' + req.body.time)
-    
-    console.log(req.session.currentUser.username);
-    console.log(req.body.title);
-    console.log(req.body.description);
-    console.log(req.body.subtask);
-    console.log(req.body.subtaskArray);
-    console.log(dt);
-
     Reminder.create({
         username: req.session.currentUser.username,
         title: req.body.title,
