@@ -16,7 +16,7 @@ const usersRouter = require('./routes/users');
 const reminderRouter = require('./routes/reminders');
 
 
-mongoose.connect(MONGOURI , { useNewUrlParser: true })
+mongoose.connect(MONGOURI, { useNewUrlParser: true })
     .then(() => console.log('connected'))
     .catch(error => console.log('error', error));
 
@@ -42,6 +42,7 @@ app.get('/script.js', function(req, res) {
 app.get('/css/style.css', function(req, res) {
     res.render(__dirname + '/public/css/style.css');
 });
+
 
 app.use(session({
     store: new MongoStore({
@@ -105,7 +106,7 @@ app.post('/abc', (req, res) => {
     //     tag: []
     // })
     dt = new Date(req.body.date + ' ' + req.body.time)
-    
+
     console.log(req.session.currentUser);
     console.log(req.session.subtask);
 
@@ -116,7 +117,7 @@ app.post('/abc', (req, res) => {
         datetime: dt,
         subtask: req.body.subtask,
         tags: []
-    } )
+    })
     res.redirect('/');
     // try {
     //     const newReminder = await reminder.save()
@@ -129,4 +130,3 @@ app.post('/abc', (req, res) => {
 
 
 module.exports = app;
-

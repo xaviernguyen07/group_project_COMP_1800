@@ -1,4 +1,21 @@
 $(document).ready(function() {
+    $(".open").click(function() {
+        $(".color").addClass("active");
+    });
+    $(".close").click(function() {
+        $(".color").removeClass("active");
+    });
+    $('#date').pickadate({
+        formatSubmit: 'mm/dd/yyyy',
+        hiddenName: false
+    });
+    $('#time').pickatime({
+        formatSubmit: 'HH:i',
+        hiddenName: false
+    });
+});
+
+$(document).ready(function() {
     /*
     date/time picker
     */
@@ -77,7 +94,7 @@ $(document).ready(function() {
 
     //create button functionality
     $('#create').click(function() {
-        
+
         let title = $('#title').val();
         console.log(title);
 
@@ -103,4 +120,6 @@ $(document).ready(function() {
         });
         console.log(subtaskArray);
     });
+
+
 });

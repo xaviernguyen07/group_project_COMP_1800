@@ -1,5 +1,5 @@
 <body class="submain">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>
         $(document).ready(function() {
             $(".open").click(function() {
@@ -17,7 +17,7 @@
                 hiddenName: false
             });
         });
-    </script>
+    </script> -->
     ​ ​
 
 
@@ -28,8 +28,8 @@
 
 
 
-        <% for (var item in reminderItem.tag){ %>
-            <label class="lab"><%= reminderItem.tag[item] %></label>
+        <% for (var item in reminderItem.tags){ %>
+            <label class="lab"><%= reminderItem.tags[item] %></label>
             <% } %>
 
 
@@ -43,9 +43,11 @@
                 ​
                 <h3>Subtasks: </h3>
                 <ul class="subtask">
-                    <li>
-                        <%= reminderItem.subtask %>
-                    </li>
+                    <% for(let i =0;i < reminderItem.subtask.length;i++){ %>
+                        <li>
+                            <%= reminderItem.subtask[i] %>
+                        </li>
+                        <% } %>
                 </ul>
                 <p class="open" id="btn">+</p>
 
@@ -55,11 +57,11 @@
     <div class="color">
         <div class="button_part">
             <button class="close">X</button>
-            <form action=<%="/reminder/" + reminderItem.id %> method="POST">
+            <form action=<%="/users/profile/" + reminderItem.id %> method="POST">
                 <h2>Add tag to reminder</h2>
                 <h4>Existing tags:</h4>
-                <% for (var item in reminderItem.tag){ %>
-                    <label class="lab"><%= reminderItem.tag[item] %></label>
+                <% for (var item in reminderItem.tags){ %>
+                    <label class="lab"><%= reminderItem.tags[item] %></label>
                     <% } %>
                         <br>
                         <h4>Add new tag:</h4>
@@ -76,7 +78,7 @@
     <!--create edit popup window-->
     <div class="edit-popup">
         <div class="form-popup_edit" id="popupForm">
-            <form action="<%= " /reminder/update/ " + reminderItem.id %>" class="form-container_edit" method="POST">
+            <form action="<%= " /users/profile/ " + reminderItem.id %>" class="form-container_edit" method="POST">
                 <h2 id="popupHeader_edit">Edit Reminder</h2>
                 <h4 id="popupTitle_edit">Title</h4>
                 <input name="title" type="text" id="planInput_edit" value=<%="" + reminderItem.title %> >
@@ -108,7 +110,7 @@
 
         </table>
     </div>
-    <script>
+    <!-- <script>
         let label = document.getElementsByTagName("label");
         let number = 0;
         label[0].style.backgroundColor = "rgb(" + 130 + "," + 150 + "," + 150 + ")"
@@ -126,7 +128,7 @@
     function closeEditPopup() {
         document.getElementById("popupForm").style.display = "none";
     }
-    </script>
+    </script> -->
 
 </body>
 ​

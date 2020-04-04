@@ -15,7 +15,7 @@ router.get('/empty_page', (req, res, next) => {
 router.post('/empty_page', (req, res) => {
     console.log("hi")
     res.redirect("/");
-})
+});
 
 // router.get("/reminder", (req, res, next) => {
 //     res.render('partials/profile', { reminders: Reminder })
@@ -36,11 +36,41 @@ router.post('/empty_page', (req, res) => {
 //         res.render('partials/empty_page', { reminders: Reminder })
 //     }
 // })
+
+// router.get("/:postId", async(req, res) => {
+//     try {
+//         let reminderToFind = req.params.postId;
+//         let searchResult = Database.cindy.reminders.find(function(reminder) {
+//             return reminder.id == reminderToFind; // Why do you think I chose NOT to use === here?
+//         })
+//         res.render('patials/subpage', { reminderItem: searchResult })
+//     } catch (err) {
+//         res.json({ message: err });
+//     }
+// });
+
+// create subpage and link to the profile
 router.get('/:postId', async(req, res) => {
     try {
         const reminderItem = await Reminder.findById(req.params.postId)
         res.render('partials/subpage', { reminderItem: reminderItem })
             // consres.json(post);
+    } catch (err) {
+        res.json({ message: err });
+    }
+});
+
+router.post("/:postId", async(req, res) => {
+    try {
+        const reminderItem1 = await Reminder.findById(req.params.postId)
+        console.log(reminderItem1.tags);
+
+        reminderItem1.tags.push(req.body.tag);
+        const reminderItem = await reminderItem1.save()
+        console.log(reminderItem.tags);
+        res.render('partials/subpage', { reminderItem: reminderItem })
+
+        res.redirect('/users/profile/' + reminderItem.id)
     } catch (err) {
         res.json({ message: err });
     }
