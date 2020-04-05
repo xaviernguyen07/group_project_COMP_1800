@@ -37,9 +37,6 @@
                 <h3>Time:
                     <%= reminderItem.datetime %>
                 </h3>
-                <p id="time">Clender
-                    <%= reminderItem.datetime %>
-                </p>
                 ​
                 <h3>Subtasks: </h3>
                 <ul class="subtask">
@@ -82,8 +79,10 @@
                 <h2 id="popupHeader_edit">Edit Reminder</h2>
                 <h4 id="popupTitle_edit">Title</h4>
                 <input name="title" type="text" id="planInput_edit" value=<%="" + reminderItem.title %> >
+                <h4 id="popupDescription_edit">Description:</h4>
+                <input name="description" type="text" id="description_edit" value=<%="" + reminderItem.description %>>
                 <h4 id="popupDate_edit">Date:</h4>
-                <input name="date" type="text" id="date" class="dateInput_edit" value=<%="" + (reminderItem.datetime.getYear()+1900) +'-' + (reminderItem.datetime.getMonth()+1) + '-' + (reminderItem.datetime.getDay()+1) %>>
+                <input name="date" type="text" id="date" class="dateInput_edit" value=<%="" + (reminderItem.datetime.getYear()) +'-' + (reminderItem.datetime.getMonth()+1) + '-' + (reminderItem.datetime.getDay()+1) %>>
                 <h4 id="popupTime_edit">Time:</h4>
                 <input name="time" type="text" id="time" class="timeInput_edit" value=<%="" + (reminderItem.datetime.getHours()) + ':' + (reminderItem.datetime.getMinutes()) %>>
                 <h4 id="popupSubtask_edit">Subtask</h4>
@@ -110,7 +109,7 @@
 
         </table>
     </div>
-    <!-- <script>
+    <script>
         let label = document.getElementsByTagName("label");
         let number = 0;
         label[0].style.backgroundColor = "rgb(" + 130 + "," + 150 + "," + 150 + ")"
@@ -128,7 +127,7 @@
     function closeEditPopup() {
         document.getElementById("popupForm").style.display = "none";
     }
-    </script> -->
+    </script>
 
 </body>
 ​
