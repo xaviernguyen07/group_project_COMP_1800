@@ -131,12 +131,15 @@ router.post('/', (req, res, next) => {
 });
 
 router.get('/:postId/delete', async(req, res) => {
-    try {
-        const reminderItem = await Reminder.findById(req.params.postId)
+    // try {
+    //     const reminderItem = await Reminder.findById(req.params.postId)
+    //     res.render('partials/subpage', { reminderItem: reminderItem })
+    // } catch (err) {
+    //     res.json({ message: err });
+    // }
+    const reminderItem = await Reminder.findById(req.params.postId).then(()=>{
         res.render('partials/subpage', { reminderItem: reminderItem })
-    } catch (err) {
-        res.json({ message: err });
-    }
+    })
 });
 
 // router.post("/:postId/delete", async(req, res) => {
@@ -147,6 +150,7 @@ router.post('/:postId/delete', async(req, res) => {
     try {
         const removePost = await Reminder.remove({ _id: req.params.postId })
         console.log(removePost);
+        res.redirect('/users/profile');
         location.reload();
     } catch (err) {
         res.json({ message: err });
