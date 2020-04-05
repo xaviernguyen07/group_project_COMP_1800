@@ -83,9 +83,9 @@
                 <h4 id="popupTitle_edit">Title</h4>
                 <input name="title" type="text" id="planInput_edit" value=<%="" + reminderItem.title %> >
                 <h4 id="popupDate_edit">Date:</h4>
-                <input name="date" type="text" id="date" class="dateInput_edit" value=<%="" + reminderItem.datetime %>>
+                <input name="date" type="text" id="date" class="dateInput_edit" value=<%="" + (reminderItem.datetime.getYear()+1900) +'-' + (reminderItem.datetime.getMonth()+1) + '-' + (reminderItem.datetime.getDay()+1) %>>
                 <h4 id="popupTime_edit">Time:</h4>
-                <input name="time" type="time" id="time" class="timeInput_edit" value=<%="" + reminderItem.datetime %>>
+                <input name="time" type="text" id="time" class="timeInput_edit" value=<%="" + (reminderItem.datetime.getHours()) + ':' + (reminderItem.datetime.getMinutes()) %>>
                 <h4 id="popupSubtask_edit">Subtask</h4>
                 <input name="subtask" type="text" id="subtask_edit" value=<%="" + reminderItem.subtask %>>
                 <br><button type="submit" id="confirmButton_edit">Confirm</button>
@@ -104,7 +104,7 @@
             <th><button class="button share">Share<i class="fa fa-share-alt"></i></th>
                 <th>
                     <form action=<%="/users/profile/" + reminderItem.id + "/delete/" %> method="POST">
-                    <button class="button delete">Delete<i class="btn fa fa-trash">
+                    <button class="button delete" id="delete-reminder-button">Delete<i class="btn fa fa-trash">
                     </form>
                 </th>
 
