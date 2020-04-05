@@ -39,6 +39,10 @@ app.get('/script.js', function(req, res) {
     res.render(__dirname + '/public/script.js');
 });
 
+app.get('/model.js', function(req, res) {
+    res.render(__dirname + '/public/model.js');
+});
+
 app.get('/css/style.css', function(req, res) {
     res.render(__dirname + '/public/css/style.css');
 });
