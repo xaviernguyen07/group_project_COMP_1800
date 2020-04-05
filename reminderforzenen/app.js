@@ -9,6 +9,7 @@ const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 require('dotenv').config()
 const MONGOURI = process.env.MONGOURI;
+const darkSky = require("./darkSkyService");
 
 
 const indexRouter = require('./routes/index');
@@ -67,6 +68,19 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/users/profile', reminderRouter);
 
+// This will be used for umbrella button
+app.use('/darkSky', async (req, res) => {
+    
+    const lat = req.query.lat;
+    const lon = req.query.long;
+    let darkSkyResults = await darkSky(lat, lon);
+    let dailyRainProb = [];
+
+    for (let i = 0; i < 8; i++){
+            dailyRainProb[i] = darkSkyResults.daily.data[i].precipProbability;
+    }
+    res.send(dailyRainProb)
+    });
 
 
 // catch 404 and forward to error handler

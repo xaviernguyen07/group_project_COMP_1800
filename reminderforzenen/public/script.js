@@ -1,8 +1,8 @@
-$(document).ready(function() {
-    $(".open").click(function() {
+$(document).ready(function () {
+    $(".open").click(function () {
         $(".color").addClass("active");
     });
-    $(".close").click(function() {
+    $(".close").click(function () {
         $(".color").removeClass("active");
     });
     $('#date').pickadate({
@@ -15,7 +15,7 @@ $(document).ready(function() {
     });
 });
 
-$(document).ready(function() {
+$(document).ready(function () {
     /*
     date/time picker
     */
@@ -36,13 +36,13 @@ $(document).ready(function() {
     popup window
     */
     function deselect(e) {
-        $('.pop').slideFadeToggle(function() {
+        $('.pop').slideFadeToggle(function () {
             e.removeClass('selected');
         });
     }
 
-    $(function() {
-        $('#create-new-reminder').on('click', function() {
+    $(function () {
+        $('#create-new-reminder').on('click', function () {
             if ($(this).hasClass('selected')) {
                 deselect($(this));
             } else {
@@ -52,13 +52,13 @@ $(document).ready(function() {
             return false;
         });
 
-        $('.close').on('click', function() {
+        $('.close').on('click', function () {
             deselect($('#create-new-reminder'));
             return false;
         });
     });
 
-    $.fn.slideFadeToggle = function(easing, callback) {
+    $.fn.slideFadeToggle = function (easing, callback) {
         return this.animate({ opacity: 'toggle', height: 'toggle' }, 'fast', easing, callback);
     };
     /*
@@ -66,7 +66,7 @@ $(document).ready(function() {
     */
 
     //add-more button functionality
-    $('#add-more-subtasks').click(function() {
+    $('#add-more-subtasks').click(function () {
         //maximum 5 subtasks
         //make this variable static
         if (typeof subtaskCount == 'undefined') {
@@ -75,7 +75,7 @@ $(document).ready(function() {
 
         //get all subtasks then store in array
         let subtaskArray = []
-        $('.subtask-input').each(function() {
+        $('.subtask-input').each(function () {
             subtaskArray.push($(this).val());
         });
 
@@ -90,36 +90,76 @@ $(document).ready(function() {
             $('#subtasks-div').append(input);
             subtaskCount++;
         }
-    })
-
-    //create button functionality
-    $('#create').click(function() {
-
-        let title = $('#title').val();
-        console.log(title);
-
-        //get date as a string
-        let date = $('#date').val();
-        console.log(date);
-
-        //get time as a string
-        let time = $('#time').val();
-        console.log(time);
-
-        //store them together to a Date object
-        let dateObject = new Date(date + ' ' + time);
-        console.log(dateObject);
-
-        //array to store subtasks
-        let subtaskArray = [];
-        //store all non-empty subtasks
-        $('.subtask').each(function() {
-            if ($(this).val() != '') {
-                subtaskArray.push($(this).val());
-            }
-        });
-        console.log(subtaskArray);
     });
+})
+
+
+
+//Stuff for umbrella button
+async function sendToDarkSky(dsKey, latitude, longitude) {
+    const fetchResponse = await fetch(
+        `http://localhost:3000/darksky?lat=${latitude}&long=${longitude}&`
+      );
+      const data = await fetchResponse.json();
+      return data;
+};
+
+//Stuff for umbrella button
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    }
+}
+
+//Stuff for umbrella button
+function showPosition(position) {
+    const lat = position.coords.latitude;
+    const lon = position.coords.longitude;
+    console.log(lat, lon);
+    sendToDarkSky('03c38bf0d83946fe44d22710353f13a1', lat, lon)
+        .then(data => {
+            console.log(data) //data contains an array of precipitation probabilities for this week.
+        })
+        .catch(err => console.log(err))
+}
+
+
+//action of umbrella button
+$('#umbBtn').click(function () {
+    getLocation()
+});
+
+
+//create button functionality
+$('#create').click(function () {
+
+    let title = $('#title').val();
+    console.log(title);
+
+    //get date as a string
+    let date = $('#date').val();
+    console.log(date);
+
+    //get time as a string
+    let time = $('#time').val();
+    console.log(time);
+
+    //store them together to a Date object
+    let dateObject = new Date(date + ' ' + time);
+    console.log(dateObject);
+
+    //array to store subtasks
+    let subtaskArray = [];
+    //store all non-empty subtasks
+    $('.subtask').each(function () {
+        if ($(this).val() != '') {
+            subtaskArray.push($(this).val());
+        }
+    });
+    console.log(subtaskArray);
+});
+
+
 
     // $('#delete-reminder-button').click(()=>{
     //     console.log('1111');
@@ -132,4 +172,3 @@ $(document).ready(function() {
     //     window.location = window.location;
     //     window.self.window.self.window.window.location = window.location;
     // });
-});
