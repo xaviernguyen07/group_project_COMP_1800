@@ -121,5 +121,15 @@ $(document).ready(function() {
         console.log(subtaskArray);
     });
 
-
+    // $('#delete-reminder-button').click(()=>{
+    //     console.log('1111');
+    //     location.reload()
+    //     history.go(0);
+    //     location.href = location.href;
+    //     location.href = location.pathname;
+    //     location.replace(location.pathname);
+    //     location.reload(false);
+    //     window.location = window.location;
+    //     window.self.window.self.window.window.location = window.location;
+    // });
 });
