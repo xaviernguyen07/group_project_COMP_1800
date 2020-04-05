@@ -97,7 +97,6 @@ router.post("/:postId/update", async(req, res) => {
     try {
 
         const reminderToFind = await Reminder.findById(req.params.postId)
-        console.log(reminderToFind);
         dt = new Date(req.body.date + ' ' + req.body.time)
         reminderToFind.title = req.body.title
         reminderToFind.datetime = dt
@@ -150,7 +149,7 @@ router.post('/:postId/delete', async(req, res) => {
     try {
         const removePost = await Reminder.remove({ _id: req.params.postId })
         console.log(removePost);
-        res.redirect('/users/profile');
+        //res.redirect('/users/profile');
         location.reload();
     } catch (err) {
         res.json({ message: err });
