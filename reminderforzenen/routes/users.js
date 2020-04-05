@@ -77,7 +77,7 @@ router.post('/signup', (req, res, next) => {
 
 });
 
-router.post('/login', (req, res, next) => {
+router.post('/login', async (req, res, next) => {
     const { username, password } = req.body;
 
     if (username === '' || password === '') {
@@ -88,7 +88,7 @@ router.post('/login', (req, res, next) => {
         return;
     }
 
-    User.findOne({ username })
+    await User.findOne({ username })
         .then((user) => {
             if (!user) {
                 res.render('partials/users', {
