@@ -68,10 +68,6 @@ b) Import a backup of all the reminders
 * DarkSky Weather API
 * HTML5 Geolocation API
 
-### License
-```
-MIT
-```
 
 ### Project Contributors
 * Zenen Hornstein - [ZenenHornstein]( https://github.com/ZenenHornstein)
