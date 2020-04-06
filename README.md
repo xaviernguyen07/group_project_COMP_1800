@@ -70,7 +70,7 @@ b) Import a backup of all the reminders
 
 ### License
 ```
-MIT
+### MIT
 ```
 
 ### Project Contributors
