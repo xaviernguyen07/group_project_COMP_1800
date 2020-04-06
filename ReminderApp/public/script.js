@@ -102,8 +102,11 @@ $(document).ready(function () {
 
 //Stuff for umbrella button
 async function sendToDarkSky(dsKey, latitude, longitude) {
+    const no_cors = 'https://cors-anywhere.herokuapp.com/'
     const fetchResponse = await fetch(
-        `http://localhost:3000/darksky?lat=${latitude}&long=${longitude}&`
+        //`http://localhost:3000/darksky?lat=${latitude}&long=${longitude}&`
+        //`${no_cors}https://api.darksky.net/forecast/${dsKey}/${latitude},${longitude}`
+        'https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/03c38bf0d83946fe44d22710353f13a1/49.1585536,-123.1814656?units=auto&exclude=[currently,minutely,hourly,alerts,flags]'
       );
       const data = await fetchResponse.json();
       return data;
@@ -179,17 +182,3 @@ $('#create').click(function () {
     });
     console.log(subtaskArray);
 });
-
-
-
-    // $('#delete-reminder-button').click(()=>{
-    //     console.log('1111');
-    //     location.reload()
-    //     history.go(0);
-    //     location.href = location.href;
-    //     location.href = location.pathname;
-    //     location.replace(location.pathname);
-    //     location.reload(false);
-    //     window.location = window.location;
-    //     window.self.window.self.window.window.location = window.location;
-    // });
