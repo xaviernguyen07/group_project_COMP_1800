@@ -84,11 +84,7 @@
   
   .overflow-hidden { overflow: hidden; }
 
-.secondHeadline{
-    visibility: hidden;
-}
-
-.thirdHeadline{
+.hiddenHeadline{
     visibility: hidden;
 }
 
