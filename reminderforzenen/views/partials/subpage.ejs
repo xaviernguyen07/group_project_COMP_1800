@@ -86,7 +86,9 @@
                 <h4 id="popupTime_edit">Time:</h4>
                 <input name="time" type="text" id="time" class="timeInput_edit" value=<%="" + (reminderItem.datetime.getHours()) + ':' + (reminderItem.datetime.getMinutes()) %>>
                 <h4 id="popupSubtask_edit">Subtask</h4>
-                <input name="subtask" type="text" id="subtask_edit" value=<%="" + reminderItem.subtask %>>
+                <% for(let i =0;i < reminderItem.subtask.length;i++) { %>
+                <input name= 'subtask' type='text' class='subtask' value=<%="" + reminderItem.subtask[i] %>>
+                <% } %>
                 <br><button type="submit" id="confirmButton_edit">Confirm</button>
             </form>
             <input type="button" value="X" id="closeButton_edit" alt="Click to close" onclick="closeEditPopup()">
@@ -106,26 +108,23 @@
                     <button class="button delete" id="delete-reminder-button">Delete<i class="btn fa fa-trash">
                     </form>
                 </th>
-
         </table>
     </div>
-<<<<<<< HEAD
 
-    <!-- <script>
-=======
     <script>
->>>>>>> a7fbdadb0de48f6da7c2868f9531cd279c76b984
-        let label = document.getElementsByTagName("label");
-        let number = 0;
-        label[0].style.backgroundColor = "rgb(" + 130 + "," + 150 + "," + 150 + ")"
-        label[1].style.backgroundColor = "rgb(" + 200 + "," + 100 + "," + 150 + ")"
-        label[2].style.backgroundColor = "rgb(" + 250 + "," + 100 + "," + 200 + ")"
-        label[3].style.backgroundColor = "rgb(" + 20 + "," + 250 + "," + 100 + ")"
-        label[4].style.backgroundColor = "rgb(" + 200 + "," + 150 + "," + 100 + ")"
-        label[5].style.backgroundColor = "rgb(" + 100 + "," + 100 + "," + 205 + ")"
-        label[6].style.backgroundColor = "rgb(" + 230 + "," + 100 + "," + 120 + ")"
-        label[7].style.backgroundColor = "rgb(" + 100 + "," + 130 + "," + 120 + ")"
-        function openEditPopup() {
+        
+        // let label = document.getElementsByTagName("label");
+        // let number = 0;
+        // label[0].style.backgroundColor = "rgb(" + 130 + "," + 150 + "," + 150 + ")"
+        // label[1].style.backgroundColor = "rgb(" + 200 + "," + 100 + "," + 150 + ")"
+        // label[2].style.backgroundColor = "rgb(" + 250 + "," + 100 + "," + 200 + ")"
+        // label[3].style.backgroundColor = "rgb(" + 20 + "," + 250 + "," + 100 + ")"
+        // label[4].style.backgroundColor = "rgb(" + 200 + "," + 150 + "," + 100 + ")"
+        // label[5].style.backgroundColor = "rgb(" + 100 + "," + 100 + "," + 205 + ")"
+        // label[6].style.backgroundColor = "rgb(" + 230 + "," + 100 + "," + 120 + ")"
+        // label[7].style.backgroundColor = "rgb(" + 100 + "," + 130 + "," + 120 + ")"
+
+    function openEditPopup() {
         document.getElementById("popupForm").style.display = "block";
     }
 

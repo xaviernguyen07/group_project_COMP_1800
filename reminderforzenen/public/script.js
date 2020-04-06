@@ -33,7 +33,7 @@ $(document).ready(function () {
     */
 
     /*
-    popup window
+    popup window create new reminder
     */
     function deselect(e) {
         $('.pop').slideFadeToggle(function () {
@@ -61,8 +61,13 @@ $(document).ready(function () {
     $.fn.slideFadeToggle = function (easing, callback) {
         return this.animate({ opacity: 'toggle', height: 'toggle' }, 'fast', easing, callback);
     };
+
+    $('#closeButton_create').click(()=>{
+        deselect($('#create-new-reminder'));
+        return false;
+    });
     /*
-    end popup window
+    end popup window create new reminder
     */
 
     //add-more button functionality
