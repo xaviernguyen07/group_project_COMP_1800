@@ -9,7 +9,7 @@ Text messages have a 98% open rate, while email has only a 20% open rate. We are
 
 ### Motivation
 
-We wanted to make an app that will give people more visibility into their hectic schedules. Sending a text reminder days/hours/minutes before the start of the appointment will make a difference and eliminate the risk of missed appointments or having to rush to an appointment that was overlooked.
+We wanted to allow people to create reminders while also checking what they can do at what time and where using the app's integrated Geolocator and Weather APIs which can affect the descision of making plans. It will allow users to be aware of what times they can make the right plans accordingly to the outside weather while also having access to a smart and responsive reminder app that allows you to prioritize your schedules accordingly.
 
 ### Requirements
 1.	The App must:
