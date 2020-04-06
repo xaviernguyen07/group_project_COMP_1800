@@ -104,9 +104,9 @@ $(document).ready(function () {
 async function sendToDarkSky(dsKey, latitude, longitude) {
     const no_cors = 'https://cors-anywhere.herokuapp.com/'
     const fetchResponse = await fetch(
-        `http://localhost:3000/darksky?lat=${latitude}&long=${longitude}&`
+        //`http://localhost:3000/darksky?lat=${latitude}&long=${longitude}&`
         //`${no_cors}https://api.darksky.net/forecast/${dsKey}/${latitude},${longitude}`
-        //'https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/03c38bf0d83946fe44d22710353f13a1/49.1585536,-123.1814656?units=auto&exclude=[currently,minutely,hourly,alerts,flags]'
+        'https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/03c38bf0d83946fe44d22710353f13a1/49.1585536,-123.1814656?units=auto&exclude=[currently,minutely,hourly,alerts,flags]'
       );
       const data = await fetchResponse.json();
       return data;
@@ -128,22 +128,19 @@ function showPosition(position) {
     console.log(lat, lon);
     sendToDarkSky('03c38bf0d83946fe44d22710353f13a1', lat, lon)
         .then(data => {
-            for(let i =0; i <= 7; i++){
-                $('#day'+ i).text(days[(today.getDay()+i) % 7])
-
-                if(data[i] <= 0.2){
-                    $('#day'+i+'_img').attr('src','/0-20.png')
-                }else if((0.2<data[i]) && (data[i]<=0.4) ){
-                    $('#day'+i+'_img').attr('src','/20-40.png')
-                }else if((0.4<data[i]) && (data[i]<=0.6) ){
-                    $('#day'+i+'_img').attr('src','/40-60.png')
-                }else if((0.6<data[i]) && (data[i]<=0.8) ){
-                    $('#day'+i+'_img').attr('src','/60-80.png')
-                }else if((0.8<data[i]) && (data[i]<=1) ){
-                    $('#day'+i+'_img').attr('src','/80-100.png')
-                }
+            console.log(data);
+            var icons = new Skycons({"color": "#7A4675"});
+            for(let i =0; i < 7; i++){
+                //day of the week
+                $('#day'+ i).text(days[(today.getDay()+i) % 7]);
+                //set icon
+                icons.set('day'+i+'icon',data.daily.data[i].icon);
+                //set low tempurature
+                $('#day'+i+'temperaturelow').text('Low: '+data.daily.data[i].temperatureLow+'C');
+                //set high tempurature
+                $('#day'+i+'temperaturehigh').text('High: '+data.daily.data[i].temperatureHigh+'C');
             }
-            console.log(data) //data contains an array of precipitation probabilities for this week.
+            icons.play();
         })
         .catch(err => console.log(err))
 }
@@ -182,3 +179,4 @@ $('#create').click(function () {
     });
     console.log(subtaskArray);
 });
+
