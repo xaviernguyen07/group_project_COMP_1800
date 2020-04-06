@@ -2,6 +2,9 @@
 
 #### *A reminders app that allows users to add, edit, & delete reminders by after the users sign up and log into the app*
 
+
+* [Powered by Dark Sky](https://darksky.net/poweredby/)
+
 ### About the App
 
 ... is a web app that allows users to set up text reminders for things that matter. It is designed for individuals who have a busy schedule and want to add and additional layer of accountability to their lives.
