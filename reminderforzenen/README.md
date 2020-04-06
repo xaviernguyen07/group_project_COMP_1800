@@ -43,13 +43,7 @@ b) Import a backup of all the reminders
 * ReactJS
 * Bootstrap
 * Javascript ES6
-* NPM Packages
-  * [bcrypt](https://www.npmjs.com/package/bcrypt)
-  * [mongo](https://www.npmjs.com/package/mongo)
-  * [mongoose](https://www.npmjs.com/package/mongoose)
-  * [express](https://www.npmjs.com/package/express)
-  * [morgan](https://www.npmjs.com/package/morgran)
-  * [dotenv](https://www.npmjs.com/package/dotenv)
+
   
 
 ### Back End Tech
