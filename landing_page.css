@@ -83,3 +83,16 @@
   }
   
   .overflow-hidden { overflow: hidden; }
+
+.secondHeadline{
+    visibility: hidden;
+}
+
+.thirdHeadline{
+    visibility: hidden;
+}
+
+.firstHeadline{
+    color:#F08080;
+
+}
