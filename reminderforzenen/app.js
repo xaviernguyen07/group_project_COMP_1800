@@ -40,13 +40,21 @@ app.get('/script.js', function(req, res) {
     res.render(__dirname + '/public/script.js');
 });
 
-app.get('/model.js', function(req, res) {
-    res.render(__dirname + '/public/model.js');
+app.get('/', function(req, res) {
+    res.render(__dirname + '/public');
 });
 
-app.get('/css/style.css', function(req, res) {
-    res.render(__dirname + '/public/css/style.css');
-});
+// app.get('/model.js', function(req, res) {
+//     res.render(__dirname + '/public/model.js');
+// });
+
+// app.get('/css/style.css', function(req, res) {
+//     res.render(__dirname + '/public/css/style.css');
+// });
+
+// app.get('/0-20.png', function(req, res) {
+//     res.render(__dirname + '/public/0-20.png');
+// });
 
 
 app.use(session({

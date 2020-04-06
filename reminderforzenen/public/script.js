@@ -120,12 +120,26 @@ function getLocation() {
 function showPosition(position) {
     const lat = position.coords.latitude;
     const lon = position.coords.longitude;
+    let today = new Date();
+    let days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
     console.log(lat, lon);
     sendToDarkSky('03c38bf0d83946fe44d22710353f13a1', lat, lon)
         .then(data => {
-            $('#today').u854t3908t4r938r4893jj3j89r32980j32032uj032r908ui32ui9803e903u8ei239u082eiu9380e
+            for(let i =0; i <= 7; i++){
+                $('#day'+ i).text(days[(today.getDay()+i) % 7])
 
-
+                if(data[i] <= 0.2){
+                    $('#day'+i+'_img').attr('src','/0-20.png')
+                }else if((0.2<data[i]) && (data[i]<=0.4) ){
+                    $('#day'+i+'_img').attr('src','/20-40.png')
+                }else if((0.4<data[i]) && (data[i]<=0.6) ){
+                    $('#day'+i+'_img').attr('src','/40-60.png')
+                }else if((0.6<data[i]) && (data[i]<=0.8) ){
+                    $('#day'+i+'_img').attr('src','/60-80.png')
+                }else if((0.8<data[i]) && (data[i]<=1) ){
+                    $('#day'+i+'_img').attr('src','/80-100.png')
+                }
+            }
             console.log(data) //data contains an array of precipitation probabilities for this week.
         })
         .catch(err => console.log(err))
@@ -133,7 +147,7 @@ function showPosition(position) {
 
 //action of umbrella button
 $('#umbBtn').click(function () {
-    getLocation()
+    getLocation();
 });
 
 
