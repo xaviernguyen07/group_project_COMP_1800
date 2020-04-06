@@ -32,10 +32,12 @@
             <label class="lab"><%= reminderItem.tags[item] %></label>
             <% } %>
 
-
+                <h3>Date:
+                    <%= "" + (reminderItem.datetime.getYear() + 1900) +'-' + (reminderItem.datetime.getMonth()+1) + '-' + (reminderItem.datetime.getDate())  %>
+                </h3>
 
                 <h3>Time:
-                    <%= reminderItem.datetime %>
+                    <%= "" + (reminderItem.datetime.getHours()) + ':' + (reminderItem.datetime.getMinutes()) %>
                 </h3>
                 ​
                 <h3>Subtasks: </h3>
@@ -80,9 +82,9 @@
                 <h4 id="popupTitle_edit">Title</h4>
                 <input name="title" type="text" id="planInput_edit" value=<%="" + reminderItem.title %> >
                 <h4 id="popupDescription_edit">Description:</h4>
-                <input name="description" type="text" id="description_edit" value=<%="" + reminderItem.description %>>
+                <input name="description" type="textfield" id="description_edit" value=<%="" + reminderItem.description %>>
                 <h4 id="popupDate_edit">Date:</h4>
-                <input name="date" type="text" id="date" class="dateInput_edit" value=<%="" + (reminderItem.datetime.getYear()) +'-' + (reminderItem.datetime.getMonth()+1) + '-' + (reminderItem.datetime.getDay()+1) %>>
+                <input name="date" type="text" id="date" class="dateInput_edit" value=<%="" + (reminderItem.datetime.getYear()) +'-' + (reminderItem.datetime.getMonth()+1) + '-' + (reminderItem.datetime.getDate()) %>>
                 <h4 id="popupTime_edit">Time:</h4>
                 <input name="time" type="text" id="time" class="timeInput_edit" value=<%="" + (reminderItem.datetime.getHours()) + ':' + (reminderItem.datetime.getMinutes()) %>>
                 <h4 id="popupSubtask_edit">Subtask</h4>
@@ -97,9 +99,19 @@
 
     <!--end edit popup window-->
 
-    ​ ​ ​
+
+    <div class='weather'>
+        <div class='weather-popup' id='weatherDisplay'>
+            <input type="button" value="X" id="closeButton_edit" alt="Click to close" onclick="closeWeatherPopup()">
+            <h1>111111111</h1>>
+        </div>
+    </div>
+
+    
     <div class="footer">
-        ​<input type="button" id="umbBtn" class="button reminder" value="BRING AN UMBRELLA?">
+        <% if( (reminderItem.datetime - Date.now()) / (1000 * 60 * 60 * 24) <= 7 ) { %>
+        ​<input type="button" id="umbBtn" class="button reminder" value="BRING AN UMBRELLA?" onclick="openWeatherPopup()">
+        <% } %>
         <table>
             <th><input type="button" class="button edit" value="Edit" onclick="openEditPopup()"></th>
             <th><button class="button share">Share<i class="fa fa-share-alt"></i></th>

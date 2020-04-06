@@ -123,11 +123,13 @@ function showPosition(position) {
     console.log(lat, lon);
     sendToDarkSky('03c38bf0d83946fe44d22710353f13a1', lat, lon)
         .then(data => {
+            $('#today').u854t3908t4r938r4893jj3j89r32980j32032uj032r908ui32ui9803e903u8ei239u082eiu9380e
+
+
             console.log(data) //data contains an array of precipitation probabilities for this week.
         })
         .catch(err => console.log(err))
 }
-
 
 //action of umbrella button
 $('#umbBtn').click(function () {

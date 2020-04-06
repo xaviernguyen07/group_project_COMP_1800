@@ -4,7 +4,6 @@
 <head>
     <meta charset="utf-8">
     <title>Reminder List</title>
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://common.olemiss.edu/_js/pickadate.js-3.5.3/lib/themes/classic.css" id="theme_base">
     <link rel="stylesheet" href="https://common.olemiss.edu/_js/pickadate.js-3.5.3/lib/themes/classic.date.css" id="theme_date">
@@ -27,11 +26,22 @@
     function closeEditPopup() {
         document.getElementById("popupForm").style.display = "none";
     }
+
+    function openWeatherPopup(){
+        document.getElementById("weatherDisplay").style.display = "block";
+    }
+
+    function closeWeatherPopup(){
+        document.getElementById("weatherDisplay").style.display = "none";
+    }
 </script>
 <script src='/model.js'></script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://common.olemiss.edu/_js/pickadate.js"></script>
 <script src='/script.js'></script>
-
+<!-- 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
 </html>

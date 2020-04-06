@@ -1478,7 +1478,7 @@ width: 50%;
     display: none;
     position: absolute;
     width: 462px;
-    height: 659px;
+    height: 859px;
     left: 125px;
     top: 0px;
     background: rgba(124, 232, 225, 0.9);
@@ -1713,12 +1713,43 @@ top: 793px; */
 }
 
 #closeButton_edit {
-    position: relative;
+    position: absolute;
     width: 30px;
     height: 30px;
-    left: 350px;
-    top: -600px;
+    right: 10px;
+    top: 10px;
 }
 
 
 /* end edit popup */
+
+
+#closeButton_create{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.container input[type= textfield]{
+    height: 60px;
+    width: 600px;
+}
+
+.form-popup_edit input[type= textfield]{
+    height: 60px;
+    width: 300px;
+}
+
+.weather-popup {
+    display: none;
+    position: absolute;
+    width: 462px;
+    height: 859px;
+    left: 125px;
+    top: 0px;
+    background: rgba(124, 232, 225, 0.9);
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    z-index: 3;
+    padding-left: 40px;
+}
