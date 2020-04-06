@@ -30,8 +30,12 @@ b) Import a backup of all the reminders
 - Fill out the form with all relevant information, including tags, subtasks, time and date to be reminded
 - All reminders will be added to the left side in the form of a scrolling page to keep track of the reminders with a check box next to them
 - You can edit and delete reminders 
+
+
 ### Live Link 
+```
 [remind.me app](*********************/)
+```
 
 ### Front End Tech
 * HTML5
