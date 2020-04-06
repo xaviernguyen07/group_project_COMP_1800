@@ -71,8 +71,9 @@ b) Import a backup of all the reminders
 * HTML5 Geolocation API
 
 ### License
+```
 
-
+```
 
 ### Project Contributors
 * Zenen Hornstein - [ZenenHornstein]( https://github.com/ZenenHornstein)
