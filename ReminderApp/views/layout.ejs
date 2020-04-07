@@ -23,7 +23,21 @@
     <script src="https://common.olemiss.edu/_js/pickadate.js"></script>
     <script src='/script.js'></script>
     <script>
+        function openEditPopup() {
+            document.getElementById("popupForm").style.display = "block";
+        }
 
+        function closeEditPopup() {
+            document.getElementById("popupForm").style.display = "none";
+        }
+
+        function openWeatherPopup(){
+            document.getElementById("weatherDisplay").style.display = "block";
+        }
+
+        function closeWeatherPopup(){
+            document.getElementById("weatherDisplay").style.display = "none";
+        }
         
 
 
