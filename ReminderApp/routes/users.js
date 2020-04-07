@@ -24,13 +24,10 @@ router.get('/', (req, res, next) => {
 
 // Scenario: User can only access dark sky API upon login
 router.get('/profile', protectedRoutes, async(req, res) => {
-    const latitude = 30.0;
-    const longitude = -45.0;
-    let darkSkyResults = await darkSky(latitude, longitude);
-    const reminders = await Reminder.find({username: req.session.currentUser.username});
+    const reminders = await Reminder.find({ username: req.session.currentUser.username });
     // console.log(reminders);
 
-    res.render('partials/profile', { user: req.session.currentUser, data: darkSkyResults, reminders: reminders });
+    res.render('partials/profile', { user: req.session.currentUser, reminders: reminders });
 
 });
 
@@ -77,7 +74,7 @@ router.post('/signup', (req, res, next) => {
 
 });
 
-router.post('/login', async (req, res, next) => {
+router.post('/login', async(req, res, next) => {
     const { username, password } = req.body;
 
     if (username === '' || password === '') {

@@ -98,7 +98,7 @@ router.post('/', (req, res, next) => {
 });
 
 router.get('/:postId/delete', async(req, res) => {
-    const reminderItem = await Reminder.findById(req.params.postId).then(()=>{
+    const reminderItem = await Reminder.findById(req.params.postId).then(() => {
         res.render('partials/subpage', { reminderItem: reminderItem })
     })
 });
@@ -116,8 +116,30 @@ router.post('/:postId/delete', async(req, res) => {
     }
 });
 
-router.get('/:postId/delete', (req, res, next) => {
-    location.reload();
+router.get('/empty_page/a', async(req, res, next) => {
+    const reminders = await Reminder.find({ username: req.session.currentUser.username });
+    // console.log(reminders);
+    res.render('partials/profile', { user: req.session.currentUser, reminders: reminders });
+});
+
+router.post('/empty_page/a', async(req, res) => {
+    try {
+        let reminders = req.body.reminder;
+
+        reminders.shift();
+        // console.log(reminders);
+
+
+        for (let i = 0; i < reminders.length; i++) {
+            const removePost = await Reminder.deleteOne({ username: req.session.currentUser.username, title: reminders[i] })
+        }
+
+        res.redirect('/users/profile');
+
+    } catch (err) {
+
+        res.json({ message: err });
+    }
 });
 
 module.exports = router;

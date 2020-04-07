@@ -33,30 +33,39 @@
     <!--end create new reminder popup window-->
     ​
     <div class="row">
-        <div class="side" style='overflow:scroll;'>
-            <table class="reminderTable">
-                <% if(typeof reminders != 'undefined') { %>
-                    <%for(let i = 0; i < reminders.length; i++) { %>
-                        <tr>
-                            <td>
-                                <input type="checkbox" id="reminder" name="reminder" value="reminder">
-                                <a target="iframe_a" href=<%="/users/profile/" + reminders[i].id %>><%= reminders[i].title %></a>
-                            </label>
-                                <span class="dot"></span><span class="dot"></span>
-                            </td>
-                        </tr>
-                        <% } %>
-                            <% } else { %>
-                                <% } %>
-            </table>
-        </div>
-        <div class="btn_bar">
-            <table>
-                <th><input type="button" class="button create" id='create-new-reminder' value="Create new"></th>
-                <th><button style="font-size: 37px" class="fa fa-share-alt"></button></th>
-                <th><button style="font-size: 37px" class="btn fa fa-trash"></button></th>
-            </table>
-        </div>
+        <form action="/users/profile/empty_page/a" method="POST">
+
+            <div class="side" style='overflow:scroll;'>
+                <table class="reminderTable">
+                    <tr style="display:none;">
+                        <td><input type="checkbox" id="reminder" name="reminder" value='dummy' checked></td>
+                    </tr>
+                    <% if(typeof reminders != 'undefined') { %>
+                        <%for(let i = 0; i < reminders.length; i++) { %>
+                            <tr>
+
+                                <td>
+                                    <input type="checkbox" id="reminder" name="reminder" value=<%="" + reminders[i].title %>>
+                                    <a target="iframe_a" href=<%="/users/profile/" + reminders[i].id %>><%= reminders[i].title %></a>
+                                    </label>
+                                    <span class="dot"></span><span class="dot"></span>
+                                </td>
+                            </tr>
+                            <% } %>
+                                <% } else { %>
+                                    <% } %>
+                </table>
+            </div>
+            <div class="btn_bar">
+                <table>
+                    <th><input type="button" class="button create" id='create-new-reminder' value="Create new"></th>
+                    <th><button style="font-size: 37px" class="fa fa-share-alt"></button></th>
+
+                    <th><button style="font-size: 37px" class="btn fa fa-trash"></button></th>
+                </table>
+            </div>
+        </form>
+
     </div>
 
     <iframe src="/users/profile/empty_page" class="main" name="iframe_a"></iframe> ​ ​
