@@ -81,91 +81,21 @@
         <div class='weather-popup' id='weatherDisplay'>
             <input type="button" value="X" id="closeButton_edit" alt="Click to close" onclick="closeWeatherPopup()">
             <table id='weather-table'>
-                <tr>
-                    <td id='day0'>            
-                    </td>
-                    <td>   
-                        <canvas id="day0icon" width="64" height="64"></canvas>
-                    </td>   
-                    <td>
-                        <p class='temperature-in-weather' id="day0temperaturelow"></p>
-                    </td>  
-                    <td>
-                        <p class='temperature-in-weather' id="day0temperaturehigh"></p>
-                    </td>       
-                </tr>
-                <tr>
-                    <td id='day1'></td>
-                    <td>            
-                        <canvas id="day1icon" width="64" height="64"></canvas>
-                    </td>
-                    <td>
-                        <p class='temperature-in-weather' id="day1temperaturelow"></p>
-                    </td>  
-                    <td>
-                        <p class='temperature-in-weather' id="day1temperaturehigh"></p>
-                    </td>   
-                </tr>
-                <tr>
-                    <td id='day2'></td>
-                    <td>
-                        <canvas id="day2icon" width="64" height="64"></canvas>
-                    </td>             
-                    <td>
-                        <p class='temperature-in-weather' id="day2temperaturelow"></p>
-                    </td>  
-                    <td>
-                        <p class='temperature-in-weather' id="day2temperaturehigh"></p>
-                    </td>      
-                </tr>
-                <tr>
-                    <td id='day3'></td>
-                    <td>
-                        <canvas id="day3icon" width="64" height="64"></canvas>
-                    </td>
-                    <td>
-                        <p class='temperature-in-weather' id="day3temperaturelow"></p>
-                    </td>  
-                    <td>
-                        <p class='temperature-in-weather' id="day3temperaturehigh"></p>
-                    </td>   
-                </tr>
-                <tr>
-                    <td id='day4'></td>
-                    <td> 
-                        <canvas id="day4icon" width="64" height="64"></canvas>
-                    </td> 
-                    <td>
-                        <p class='temperature-in-weather' id="day4temperaturelow"></p>
-                    </td>  
-                    <td>
-                        <p class='temperature-in-weather' id="day4temperaturehigh"></p>
-                    </td>                  
-                </tr>
-                <tr>
-                    <td  id='day5'></td>
-                    <td>
-                        <canvas id="day5icon" width="64" height="64"></canvas>
-                    </td>
-                    <td>
-                        <p class='temperature-in-weather' id="day5temperaturelow"></p>
-                    </td>  
-                    <td>
-                        <p class='temperature-in-weather' id="day5temperaturehigh"></p>
-                    </td>   
-                </tr>
-                <tr>
-                    <td  id='day6'></td>
-                    <td>
-                        <canvas id="day6icon" width="64" height="64"></canvas>
-                    </td>
-                    <td>
-                        <p class='temperature-in-weather' id="day6temperaturelow"></p>
-                    </td>  
-                    <td>
-                        <p class='temperature-in-weather' id="day6temperaturehigh"></p>
-                    </td>   
-                </tr>
+                <% for(let i = 0; i < 7; i++){ %>
+                    <tr>
+                        <td id=<%= 'day'+ i %> >            
+                        </td>
+                        <td>   
+                            <canvas id=<%= "day"+i+"icon" %> width="64" height="64"></canvas>
+                        </td>   
+                        <td>
+                            <p class='temperature-in-weather' id=<%= 'day'+ i +'temperaturelow' %>></p>
+                        </td>  
+                        <td>
+                            <p class='temperature-in-weather' id=<%= 'day'+ i +"temperaturehigh" %>></p>
+                        </td>       
+                    </tr>
+                <% } %>
             </table>
             <div id='darksky-link-in-weather'>
                 <a href="https://darksky.net/dev">powered by darksky</a>
