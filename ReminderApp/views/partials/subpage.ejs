@@ -11,15 +11,13 @@
             <label class="lab"><%= reminderItem.tags[item] %></label>
             <% } %>
 
-                <h3>Date:
-                    <%= "" + (reminderItem.datetime.getYear() + 1900) +'-' + (reminderItem.datetime.getMonth()+1) + '-' + (reminderItem.datetime.getDate())  %>
-                </h3>
+                <h2 class='detail-field-names-h2'>Date: <%= "" + (reminderItem.datetime.getYear() + 1900) +'-' + (reminderItem.datetime.getMonth()+1) + '-' + (reminderItem.datetime.getDate())  %></h2>
+                <h2 class='detail-field-names-h2'>Time: <%= "" + (reminderItem.datetime.getHours()) + ':' + (reminderItem.datetime.getMinutes()) %></h2>
+<br>
+                <h2 class='detail-field-names-h2'>Description:</h2>
+                ​<p class='detail-field-names-p'><%= reminderItem.description %></p>
 
-                <h3>Time:
-                    <%= "" + (reminderItem.datetime.getHours()) + ':' + (reminderItem.datetime.getMinutes()) %>
-                </h3>
-                ​
-                <h3>Subtasks: </h3>
+                <h2 class='detail-field-names-h2'>Subtasks: </h2>
                 <ul class="subtask">
                     <% for(let i =0;i < reminderItem.subtask.length;i++){ %>
                         <li>
