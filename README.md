@@ -79,9 +79,6 @@ b) Import a backup of all the reminders
 
 
 ### To be completed
-* Date value display bug in edit reminder
-* Refresh page after single delete
-* Mass delete button functionality
 * Search bar functionality
 * Forgot password
 * Search and add friends
