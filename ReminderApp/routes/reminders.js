@@ -17,38 +17,6 @@ router.post('/empty_page', (req, res) => {
     res.redirect("/");
 });
 
-// router.get("/reminder", (req, res, next) => {
-//     res.render('partials/profile', { reminders: Reminder })
-// });
-
-// router.get("/reminder/", (req, res, next) => {
-//     res.render('partials/profile')
-// });
-
-// router.get("/:id", (req, res, next) => {
-//     let reminderToFind = req.params.id;
-//     let searchResult = Database.cindy.reminders.find(function(reminder) {
-//         return reminder.id == reminderToFind; // good test question for students what happens if I put ===
-//     })
-//     if (searchResult != undefined) {
-//         res.render('partials/subpage', { reminderItem: searchResult })
-//     } else {
-//         res.render('partials/empty_page', { reminders: Reminder })
-//     }
-// })
-
-// router.get("/:postId", async(req, res) => {
-//     try {
-//         let reminderToFind = req.params.postId;
-//         let searchResult = Database.cindy.reminders.find(function(reminder) {
-//             return reminder.id == reminderToFind; // Why do you think I chose NOT to use === here?
-//         })
-//         res.render('patials/subpage', { reminderItem: searchResult })
-//     } catch (err) {
-//         res.json({ message: err });
-//     }
-// });
-
 
 // create subpage and link to the profile
 router.get('/:postId', async(req, res) => {
@@ -130,20 +98,12 @@ router.post('/', (req, res, next) => {
 });
 
 router.get('/:postId/delete', async(req, res) => {
-    // try {
-    //     const reminderItem = await Reminder.findById(req.params.postId)
-    //     res.render('partials/subpage', { reminderItem: reminderItem })
-    // } catch (err) {
-    //     res.json({ message: err });
-    // }
     const reminderItem = await Reminder.findById(req.params.postId).then(()=>{
         res.render('partials/subpage', { reminderItem: reminderItem })
     })
 });
 
-// router.post("/:postId/delete", async(req, res) => {
-//     res.redirect("/users/profile/empty_page");
-// })
+
 
 router.post('/:postId/delete', async(req, res) => {
     try {

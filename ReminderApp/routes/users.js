@@ -120,18 +120,4 @@ router.get('/logout', (req, res, next) => {
     });
 });
 
-
-// // find all data
-// router.get('/', async(req, res) => {
-//     try {
-//         const posts = await User.find();
-//         res.json(posts);
-//     } catch (err) {
-//         res.json({ message: err });
-//     }
-// });
-
-
-
-
 module.exports = router;

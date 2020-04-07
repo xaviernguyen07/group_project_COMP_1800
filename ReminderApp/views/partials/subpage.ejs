@@ -1,25 +1,4 @@
 <body class="submain">
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $(".open").click(function() {
-                $(".color").addClass("active");
-            });
-            $(".close").click(function() {
-                $(".color").removeClass("active");
-            });
-            $('#date').pickadate({
-                formatSubmit: 'mm/dd/yyyy',
-                hiddenName: false
-            });
-            $('#time').pickatime({
-                formatSubmit: 'HH:i',
-                hiddenName: false
-            });
-        });
-    </script> -->
-    ​ ​
-
 
     <div class="control_space">
         <h1>
@@ -87,7 +66,7 @@
                 <input name="date" type="text" id="date" class="dateInput_edit" value=<%="" + (reminderItem.datetime.getYear()) +'-' + (reminderItem.datetime.getMonth()+1) + '-' + (reminderItem.datetime.getDate()) %>>
                 <h4 id="popupTime_edit">Time:</h4>
                 <input name="time" type="text" id="time" class="timeInput_edit" value=<%="" + (reminderItem.datetime.getHours()) + ':' + (reminderItem.datetime.getMinutes()) %>>
-                <h4 id="popupSubtask_edit">Subtask</h4>
+                <h4 id="popupSubtask_edit">Subtasks:</h4>
                 <% for(let i =0;i < reminderItem.subtask.length;i++) { %>
                 <input name= 'subtask' type='text' class='subtask' value=<%="" + reminderItem.subtask[i] %>>
                 <% } %>
