@@ -6,6 +6,7 @@ $(document).ready(function () {
         $(".color").removeClass("active");
     });
     $('#date').pickadate({
+        //format: 'd-mmmm-yyyy',
         formatSubmit: 'mm/dd/yyyy',
         hiddenName: false
     });

@@ -1784,5 +1784,8 @@ top: 793px; */
     margin-bottom: 10px;
     font-size: 20px;
     position: relative;
-    top: -15px;
+    top: 0px;
+    word-wrap: break-word;
 }
+
+
