@@ -77,6 +77,17 @@ b) Import a backup of all the reminders
 * HTML5 Geolocation API
 
 
+### To be completed
+* Date value display bug in edit reminder
+* Refresh page after single delete
+* Mass delete button functionality
+* Search bar functionality
+* Add friends
+* Share reminders
+* Option for users to delete account
+* Back up, export and import reminders
+
+
 ### Project Contributors
 * Zenen Hornstein - [ZenenHornstein]( https://github.com/ZenenHornstein)
 * Tommy Chien - [Tommy-81321]( https://github.com/Tommy-81321)
