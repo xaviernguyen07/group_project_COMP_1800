@@ -85,16 +85,16 @@
             <table id='weather-table'>
                 <% for(let i = 0; i < 7; i++){ %>
                     <tr>
-                        <td id='day0'>            
+                        <td id=<%= 'day'+ i %> >            
                         </td>
                         <td>   
-                            <canvas id="day"+i+"icon" width="64" height="64"></canvas>
+                            <canvas id=<%= "day"+i+"icon" %> width="64" height="64"></canvas>
                         </td>   
                         <td>
-                            <p class='temperature-in-weather' <%= id='day'+i+'temperaturelow' %></p>
+                            <p class='temperature-in-weather' id=<%= 'day'+ i +'temperaturelow' %>></p>
                         </td>  
                         <td>
-                            <p class='temperature-in-weather' id="day"+i+"temperaturehigh"></p>
+                            <p class='temperature-in-weather' id=<%= 'day'+ i +"temperaturehigh" %>></p>
                         </td>       
                     </tr>
                 <% } %>
