@@ -3,7 +3,7 @@
     "version": "0.0.0",
     "private": true,
     "scripts": {
-        "start": "node ./bin/www",
+        "start": "open-cli http://localhost:3000/ && node ./bin/www",
         "start-dev": "nodemon ./bin/www"
     },
     "dependencies": {
@@ -21,7 +21,9 @@
         "http-errors": "~1.7.3",
         "mongoose": "^5.9.7",
         "morgan": "~1.10.0",
-        "node-fetch": "^2.6.0"
+        "node-fetch": "^2.6.0",
+        "open-cli": "^6.0.1",
+        "requirements": "^1.3.2"
     },
     "devDependencies": {
         "nodemon": "^2.0.2"
