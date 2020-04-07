@@ -64,12 +64,13 @@ b) Import a backup of all the reminders
 * MongoDB, Mongoose
 * Node Rest Client
 * NPM Packages
-  * [bcrypt](https://www.npmjs.com/package/bcrypt)
-  * [mongo](https://www.npmjs.com/package/mongo)
-  * [mongoose](https://www.npmjs.com/package/mongoose)
-  * [express](https://www.npmjs.com/package/express)
-  * [morgan](https://www.npmjs.com/package/morgran)
-  * [dotenv](https://www.npmjs.com/package/dotenv)
+  * [bcrypt](https://www.npmjs.com/package/bcrypt) -> Used for cryptographic hashing of passwords.
+  * [mongo](https://www.npmjs.com/package/mongo) -> Database for storing persistent info.
+  * [mongoose](https://www.npmjs.com/package/mongoose) -> Used to create Schemas for DataBase storage.
+  * [express](https://www.npmjs.com/package/express) -> Server and templating
+  * [morgan](https://www.npmjs.com/package/morgran) -> Logging
+  * [dotenv](https://www.npmjs.com/package/dotenv) -> Used for hiding secrets.
+  * [ejs](https://www.npmjs.com/package/ejs) -> Templating
 
 
 ### APIs Used
