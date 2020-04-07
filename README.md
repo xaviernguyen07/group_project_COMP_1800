@@ -27,6 +27,14 @@ b) Import a backup of all the reminders
 4.	User Authentication
 5.	Use of DarkSky Weather API & HTML5 Geolocation API
 
+### Set up
+1. `$ cd ReminderApp`
+2. `$ npm install requirements`
+3. `$ echo "MONGOURI=<INSERT_MONGO_URI>" > .env`  *Replace <INSERT_MONGO_URI> with URI of your mongodb database.*
+4. `npm start`
+
+ 
+
 ### Instructions
 
 - When you arrive to the homepage, you sign up and sign in with a specific email and password
