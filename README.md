@@ -44,7 +44,7 @@ b) Import a backup of all the reminders
 - You can edit and delete reminders 
 
 
-### Live Link 
+### Live Link `
 ```
 [remind.me app](*********************/)
 ```
@@ -82,15 +82,16 @@ b) Import a backup of all the reminders
 * Refresh page after single delete
 * Mass delete button functionality
 * Search bar functionality
-* Add friends
+* Forgot password
+* Search and add friends
 * Share reminders
 * Option for users to delete account
 * Back up, export and import reminders
 
 
 ### Project Contributors
-* Zenen Hornstein - [ZenenHornstein]( https://github.com/ZenenHornstein)
-* Tommy Chien - [Tommy-81321]( https://github.com/Tommy-81321)
-* Terry Weilun - [TerryLun]( https://github.com/TerryLun)
+* Zenen Hornstein - [ZenenHornstein](https://github.com/ZenenHornstein)
+* Tommy Chien - [Tommy-81321](https://github.com/Tommy-81321)
+* Terry Weilun - [TerryLun](https://github.com/TerryLun)
 * Sepehr Mansouri - [sepehrman](https://github.com/sepehrman)
-* Xavier Nguyen - [xaviernguyen07]( https://github.com/xaviernguyen07)
+* Xavier Nguyen - [xaviernguyen07](https://github.com/xaviernguyen07)

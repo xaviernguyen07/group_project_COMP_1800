@@ -179,3 +179,25 @@ $('#create').click(function () {
     console.log(subtaskArray);
 });
 
+$('.signupbtn').click((e) => {
+    let psw = $('.enterPsw').val();
+    let rpsw = $('.reEnterPsw').val();
+    console.log("inside");
+    
+    // validate password
+    if (psw !== rpsw) {
+        $('.enterPsw').val('');
+        $('.reEnterPsw').val('');
+        $('.enterPsw').attr('placeholder', 'Two passwords must be the same. Please re-enter.');
+        $('.reEnterPsw').attr('placeholder', 'Two passwords must be the same. Please re-enter.');
+    }
+
+    //validate email
+    let email_regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i;
+    if(!email_regex.test($('.enterEmail').val())){
+        $('.enterEmail').val('');
+        $('.enterEmail').attr('placeholder', 'Please enter a valid email address.');
+    }
+})
+
+
