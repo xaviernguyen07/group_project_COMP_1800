@@ -31,9 +31,6 @@ router.get('/profile', protectedRoutes, async(req, res) => {
 
 });
 
-router.get('/profile', protectedRoutes, async(req, res) => {
-    res.render('partials/profile', { reminders: Reminder })
-});
 
 router.get('/signup', (req, res, next) => {
     res.render('partials/signup', { errorMessage: undefined });

@@ -40,22 +40,10 @@ app.get('/script.js', function(req, res) {
     res.render(__dirname + '/public/script.js');
 });
 
+// set the default link ot the public folder 
 app.get('/', function(req, res) {
     res.render(__dirname + '/public');
 });
-
-// app.get('/model.js', function(req, res) {
-//     res.render(__dirname + '/public/model.js');
-// });
-
-// app.get('/css/style.css', function(req, res) {
-//     res.render(__dirname + '/public/css/style.css');
-// });
-
-// app.get('/0-20.png', function(req, res) {
-//     res.render(__dirname + '/public/0-20.png');
-// });
-
 
 app.use(session({
     store: new MongoStore({
@@ -75,24 +63,24 @@ app.use((req, res, next) => {
     next();
 });
 
-
+// dSet the default path for usersRouter, reminderRouter
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/users/profile', reminderRouter);
 
 // This will be used for umbrella button
-app.use('/darkSky', async (req, res) => {
-    
+app.use('/darkSky', async(req, res) => {
+
     const lat = req.query.lat;
     const lon = req.query.long;
     let darkSkyResults = await darkSky(lat, lon);
     let dailyRainProb = [];
 
-    for (let i = 0; i < 8; i++){
-            dailyRainProb[i] = darkSkyResults.daily.data[i].precipProbability;
+    for (let i = 0; i < 8; i++) {
+        dailyRainProb[i] = darkSkyResults.daily.data[i].precipProbability;
     }
     res.send(dailyRainProb)
-    });
+});
 
 
 // catch 404 and forward to error handler
@@ -110,49 +98,5 @@ app.use((err, req, res) => {
     res.status(err.status || 500);
     res.render('partials/error');
 });
-
-// require('dotenv/config');
-// // check object
-// const bodyParser = require('body-parser');
-// const cors = require('cors');
-
-// // Middleewares
-// app.use(cors());
-// app.use(bodyParser.json());
-
-// // add path in postsRoute
-// app.use('/posts', usersRouter)
-
-app.post('/abc', (req, res) => {
-    // const reminder = new Reminder({
-    //     title: req.body.title,
-    //     dat: req.body.date,
-    //     time: req.body.time,
-    //     Subtask: req.body.Subtask,
-    //     tag: []
-    // })
-    dt = new Date(req.body.date + ' ' + req.body.time)
-
-    console.log(req.session.currentUser);
-    console.log(req.session.subtask);
-
-    Reminder.create({
-        username: req.session.currentUser,
-        title: req.body.title,
-        description: req.body.description,
-        datetime: dt,
-        subtask: req.body.subtask,
-        tags: []
-    })
-    res.redirect('/');
-    // try {
-    //     const newReminder = await reminder.save()
-    //     res.status(201).json(newReminder)
-    //     res.redirect('/users/profile');
-    // } catch (err) {
-    //     res.status(400).json({ message: err.message })
-    // }
-});
-
 
 module.exports = app;

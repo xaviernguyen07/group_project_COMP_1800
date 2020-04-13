@@ -9,9 +9,12 @@ const Reminder = require('../models/reminder');
 const protectedRoutes = require('../middlewares/protectedRoutes');
 
 
+// empty page with link
 router.get('/empty_page', (req, res, next) => {
     res.render('partials/empty_page');
 });
+
+// checking the subpage working
 router.post('/empty_page', (req, res) => {
     console.log("hi")
     res.redirect("/");
@@ -50,6 +53,7 @@ router.post("/:postId", async(req, res) => {
     }
 });
 
+// Update page by editing 
 router.get('/:postId/update', async(req, res) => {
     try {
         const reminderItem = await Reminder.findById(req.params.postId)
@@ -59,7 +63,6 @@ router.get('/:postId/update', async(req, res) => {
         res.json({ message: err });
     }
 });
-
 
 router.post("/:postId/update", async(req, res) => {
     try {
@@ -97,6 +100,7 @@ router.post('/', (req, res, next) => {
         })
 });
 
+// Delete one
 router.get('/:postId/delete', async(req, res) => {
     const reminderItem = await Reminder.findById(req.params.postId).then(() => {
         res.render('partials/subpage', { reminderItem: reminderItem })
@@ -120,13 +124,15 @@ router.get('/:postId/delete', (req, res, next) => {
     location.reload();
 });
 
-router.get('/empty_page/a', async(req, res, next) => {
+
+// delete one by list checkbox
+router.get('/empty_page/delete_checkbox', async(req, res, next) => {
     const reminders = await Reminder.find({ username: req.session.currentUser.username });
     // console.log(reminders);
     res.render('partials/profile', { user: req.session.currentUser, reminders: reminders });
 });
 
-router.post('/empty_page/a', async(req, res) => {
+router.post('/empty_page/delete_checkbox', async(req, res) => {
     try {
         let reminders = req.body.reminder;
 
