@@ -8,7 +8,7 @@
 
 ### About the App
 
-... is a web app that allows users to set up text reminders for things that matter. It is designed for individuals who have a busy schedule and want to add and additional layer of accountability to their lives.
+This Reminder App allows users to set up text reminders for things that matter. It is designed for individuals who have a busy schedule and want to add and additional layer of accountability to their lives.
 Text messages have a 98% open rate, while email has only a 20% open rate. We are leveraging this to help people stay on top of their schedules.
 
 ### Motivation
