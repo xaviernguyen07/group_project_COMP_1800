@@ -111,7 +111,7 @@ router.get('/:postId/delete', async(req, res) => {
 
 router.post('/:postId/delete', async(req, res) => {
     try {
-        const removePost = await Reminder.remove({ _id: req.params.postId })
+        const removePost = await Reminder.remove({ username: req.session.currentUser.username, _id: req.params.postId })
         console.log(removePost);
         //res.redirect('/users/profile');
         location.reload();
