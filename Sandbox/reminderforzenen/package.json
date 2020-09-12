@@ -19,7 +19,7 @@
     "http-errors": "~1.7.3",
     "mongoose": "^5.9.7",
     "morgan": "~1.10.0",
-    "node-fetch": "^2.6.0"
+    "node-fetch": "^2.6.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.2"
